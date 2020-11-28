@@ -7,21 +7,14 @@ using System.Threading.Tasks;
 
 namespace Online_Clinic.DataAccess
 {
-    [Table("Doktorlar")]
     public class Doktor
     {
-        [Column("DoktorID")]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int DoktorID { get; set; }
-
-        [Column("Doktor Adı Soyadı")]
-        [Required]
-        [StringLength(100)]
         public string Ad { get; set; }
 
-        [ForeignKey("DoktorID")]
-        public virtual List<Hasta> Hastalar { get; set; }
+        [NotMapped]
+        public List<Hasta> Hastalar { get; set; }
     }
 }

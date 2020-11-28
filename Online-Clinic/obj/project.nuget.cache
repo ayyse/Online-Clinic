@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LMGwVhjwwptlpZymFgkahdBZlYwaAlYg5TlwZ6eElvTRlN47RZUt33JtP+QSzOW9C1cq/CDFJCvVtt3jI5aLEA==",
+  "dgSpecHash": "CrxA82vXdiU/e4QcutvOfWVU8GsAC2/YundQMKHVunEe/tNwiBUGe+d2xTeQP3TKp3mflO1ius+Gp03uYAfksg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic\\Online-Clinic.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.10\\microsoft.entityframeworkcore.design.3.1.10.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.10\\microsoft.entityframeworkcore.relational.3.1.10.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.10\\microsoft.entityframeworkcore.sqlserver.3.1.10.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.10\\microsoft.entityframeworkcore.tools.3.1.10.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.10\\microsoft.extensions.caching.abstractions.3.1.10.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.10\\microsoft.extensions.caching.memory.3.1.10.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.10\\microsoft.extensions.configuration.3.1.10.nupkg.sha512",
