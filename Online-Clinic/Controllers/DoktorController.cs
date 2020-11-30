@@ -12,5 +12,10 @@ namespace Online_Clinic.Controllers
         {
             return View();
         }
+
+        public IActionResult Kayıt()
+        {
+            return View();
+        }
     }
 }

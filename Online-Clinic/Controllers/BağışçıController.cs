@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Online_Clinic.Controllers
 {
-    public class BireyselController : Controller
+    public class BağışçıController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Bireysel()
+        {
+            return View();
+        }
+
+        public IActionResult Kurumsal()
         {
             return View();
         }
