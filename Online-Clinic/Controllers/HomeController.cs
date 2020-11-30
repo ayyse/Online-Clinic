@@ -23,6 +23,11 @@ namespace Online_Clinic.Controllers
             return View();
         }
 
+        public IActionResult Doktor()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
