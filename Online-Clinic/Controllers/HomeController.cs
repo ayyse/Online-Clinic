@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Online_Clinic.DataAccess;
 using Online_Clinic.Models;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,12 @@ namespace Online_Clinic.Controllers
             return View();
         }
 
-        public IActionResult Doktor()
+        public IActionResult Giriş()
+        {
+            return View();
+        }
+
+        public IActionResult Kayıt()
         {
             return View();
         }
