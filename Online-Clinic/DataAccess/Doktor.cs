@@ -14,9 +14,10 @@ namespace Online_Clinic.DataAccess
         public int DoktorID { get; set; }
         public string AdSoyad { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
+        public string Şifre { get; set; }
 
         [NotMapped]
         public List<Hasta> Hastalar { get; set; }
+       // public object Operation { get; internal set; }
     }
 }

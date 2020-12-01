@@ -12,7 +12,7 @@ namespace Online_Clinic.DataAccess
         [Key]
         [Required]
         public int HastaID { get; set; }
-        public string Ad { get; set; }
+        public string AdSoyad { get; set; }
 
         [NotMapped]
         public List<Doktor> Doktorlar { get; set; }
