@@ -21,8 +21,7 @@ namespace Online_Clinic.Controllers
         // GET: Bağışçı
         public async Task<IActionResult> Index()
         {
-            await _context.Bağışçılar.ToListAsync();
-            return View();
+            return View(await _context.Bağışçılar.ToListAsync());
         }
 
         // GET: Bağışçı/Details/5

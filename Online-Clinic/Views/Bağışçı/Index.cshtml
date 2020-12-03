@@ -34,51 +34,54 @@
             <th>
                 @Html.DisplayNameFor(model => model.Adres)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Şifre)
-            </th>
-            <th></th>
+            </th>*@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdSoyad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoğumTarihi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cinsiyet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tür)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kurum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Özgeçmiş)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Şifre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BağışçıID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BağışçıID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BağışçıID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            @if (item != null)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdSoyad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoğumTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cinsiyet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tür)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kurum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Özgeçmiş)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adres)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Şifre)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.BağışçıID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BağışçıID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.BağışçıID">Delete</a>
+                    </td>*@
+                </tr>
+            }
+        }
     </tbody>
 </table>

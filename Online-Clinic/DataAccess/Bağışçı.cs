@@ -28,7 +28,7 @@ namespace Online_Clinic.DataAccess
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Şifre { get; set; }
 
-        [NotMapped]
-        public List<Bağışçı> Bağışçılar { get; set; }
+        //[NotMapped]
+        //public List<Bağışçı> Bağışçılar { get; set; }
     }
 }

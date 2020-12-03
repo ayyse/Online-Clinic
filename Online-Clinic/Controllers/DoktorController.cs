@@ -19,6 +19,7 @@ namespace Online_Clinic.Controllers
         }
 
         // GET: Doktor
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Doktorlar.ToListAsync());
