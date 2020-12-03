@@ -182,3 +182,8 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Doktor\Index.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Create.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Delete.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Details.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Edit.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Index.cshtml.g.cs
