@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201202135145_Migrtion2.cs" />
+    <Compile Remove="Migrations\20201202135145_Migrtion2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\css\main.css" />
     <None Include="wwwroot\css\util.css" />
     <None Include="wwwroot\fonts\font-awesome-4.7.0\css\font-awesome.css" />

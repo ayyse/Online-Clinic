@@ -1,0 +1,74 @@
+﻿@model Online_Clinic.DataAccess.Doktor
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Doktor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdSoyad" class="control-label"></label>
+                <input asp-for="AdSoyad" class="form-control" />
+                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoğumTarihi" class="control-label"></label>
+                <input asp-for="DoğumTarihi" class="form-control" />
+                <span asp-validation-for="DoğumTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cinsiyet" class="control-label"></label>
+                <input asp-for="Cinsiyet" class="form-control" />
+                <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Branş" class="control-label"></label>
+                <input asp-for="Branş" class="form-control" />
+                <span asp-validation-for="Branş" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Özgeçmiş" class="control-label"></label>
+                <input asp-for="Özgeçmiş" class="form-control" />
+                <span asp-validation-for="Özgeçmiş" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kurum" class="control-label"></label>
+                <input asp-for="Kurum" class="form-control" />
+                <span asp-validation-for="Kurum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Şifre" class="control-label"></label>
+                <input asp-for="Şifre" class="form-control" />
+                <span asp-validation-for="Şifre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -18,19 +18,9 @@ namespace Online_Clinic.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Giriş()
-        {
-            return View();
-        }
-
-        public IActionResult Kayıt()
-        {
+            AppDbContext context = new AppDbContext();
             return View();
         }
 

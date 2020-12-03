@@ -12,12 +12,28 @@ namespace Online_Clinic.DataAccess
         [Key]
         [Required]
         public int DoktorID { get; set; }
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string AdSoyad { get; set; }
+        public string DoğumTarihi { get; set; }
+        public string Cinsiyet { get; set; }
+        public string Branş { get; set; }
+        public string Özgeçmiş { get; set; }
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
+        public string Adres { get; set; }
+        public string Kurum { get; set; }
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Şifre { get; set; }
+        
 
         [NotMapped]
         public List<Hasta> Hastalar { get; set; }
-       // public object Operation { get; internal set; }
+        //public int Rating { get; internal set; }
+        // public object Operation { get; internal set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Online_Clinic.DataAccess.Bağışçı>
+﻿@model IEnumerable<Online_Clinic.DataAccess.Doktor>
 
 @{
     ViewData["Title"] = "Index";
@@ -23,16 +23,16 @@
                 @Html.DisplayNameFor(model => model.Cinsiyet)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tür)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kurum)
+                @Html.DisplayNameFor(model => model.Branş)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Özgeçmiş)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kurum)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Email)
@@ -56,10 +56,7 @@
                 @Html.DisplayFor(modelItem => item.Cinsiyet)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tür)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kurum)
+                @Html.DisplayFor(modelItem => item.Branş)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Özgeçmiş)
@@ -68,15 +65,18 @@
                 @Html.DisplayFor(modelItem => item.Adres)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Kurum)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Şifre)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BağışçıID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BağışçıID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BağışçıID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.DoktorID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DoktorID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DoktorID">Delete</a>
             </td>
         </tr>
 }
