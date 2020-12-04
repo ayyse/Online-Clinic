@@ -19,7 +19,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.DoğumTarihi)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Cinsiyet)
             </th>
             <th>
@@ -27,7 +27,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Şifre)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -40,7 +40,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DoğumTarihi)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Cinsiyet)
             </td>
             <td>
@@ -53,7 +53,7 @@
                 <a asp-action="Edit" asp-route-id="@item.HastaID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.HastaID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.HastaID">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

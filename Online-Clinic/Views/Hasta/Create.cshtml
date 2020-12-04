@@ -14,28 +14,88 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AdSoyad" class="control-label"></label>
+                <label for="exampleTextarea">AD SOYAD</label>
                 <input asp-for="AdSoyad" class="form-control" />
                 <span asp-validation-for="AdSoyad" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <label asp-for="DoğumTarihi" class="control-label"></label>
+                <label for="exampleTextarea">DOĞUM TARİHİ</label>
                 <input asp-for="DoğumTarihi" class="form-control" />
-                <span asp-validation-for="DoğumTarihi" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cinsiyet" class="control-label"></label>
-                <input asp-for="Cinsiyet" class="form-control" />
-                <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+            <br />
+            <div>CİNSİYET</div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                    Kadın
+                </label>
             </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Erkek
+                </label>
+            </div>
+            <br />
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label for="exampleTextarea">HASTALIK GEÇMİŞİ</label>
+                <input asp-for="HastalıkGeçmişi" style="text-align" class="form-control" />
+            </div>
+            <br />
+            <div>KRONİK HASTALIKLAR</div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Hipertansiyon
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    KOAH Hastalığı
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Şeker Hastalığı(Diyabet)
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Astım
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Böbrek Hastalığı
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Kalp/Damar Hastalığı
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Karaciğer Hastalığı
+                </label>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputEmail1">EMAİL</label>
+                <input asp-for="Email" type="email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <label asp-for="Şifre" class="control-label"></label>
-                <input asp-for="Şifre" class="form-control" />
+                <label for="exampleInputPassword1">ŞİFRE</label>
+                <input asp-for="Şifre" type="password" class="form-control">
                 <span asp-validation-for="Şifre" class="text-danger"></span>
             </div>
             <div class="form-group">

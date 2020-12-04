@@ -17,6 +17,11 @@ namespace Online_Clinic.DataAccess
         public string AdSoyad { get; set; }
         public string DoğumTarihi { get; set; }
         public string Cinsiyet { get; set; }
+        public string HastalıkGeçmişi { get; set;}
+
+        public string KronikHastalıklar { get; set; }
+
+        public string TedaviEdenDoktor { get; set; }
 
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Email { get; set; }
