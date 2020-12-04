@@ -187,3 +187,4 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Details.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Edit.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Index.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
