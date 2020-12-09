@@ -14,7 +14,8 @@ namespace Online_Clinic.Data.DbModels
         public int BağışçıID { get; set; }
 
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
-        public string AdSoyad { get; set; }
+        public string Ad { get; set; }
+        public string Soyad { get; set; }
         public string DoğumTarihi { get; set; }
         public string Cinsiyet { get; set; }
         public string Tür { get; set; } //Kurumsal mı bireysel mi?
