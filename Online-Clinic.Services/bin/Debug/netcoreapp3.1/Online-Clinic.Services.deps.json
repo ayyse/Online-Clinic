@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Online-Clinic.Services/1.0.0": {
+        "runtime": {
+          "Online-Clinic.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Online-Clinic.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Online_Clinic.DataAccess;
+using Online_Clinic.Data.DataContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +26,15 @@ namespace Online_Clinic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
+            services.AddDbContext<ClinicContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>
-           (o => o.UseSqlServer(Configuration.
-            GetConnectionString("MyNewDatabase")));
+                (o => o.UseSqlServer(Configuration.GetConnectionString("MyNewDatabase")));
         }
 
-        /*public void ConfigureServices(IServiceCollection services)
-        => services.AddDbContext<AppDbContext>();*/
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,9 +71,9 @@ namespace Online_Clinic
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                //endpoints.MapControllerRoute(
-                //   name: "MyArea",
-                //   pattern: "{area:Admin}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "MyArea",
+                   pattern: "{area:Admin}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
