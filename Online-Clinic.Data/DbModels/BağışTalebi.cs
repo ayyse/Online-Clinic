@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Online_Clinic.Data.DbModels
 {
-    public class HastaBağışTalebi : Hasta
+    public class BağışTalebi : Hasta
     {
         //TODO: Talepte bulunan hastalar için
         public string HastaID { get; set; }
