@@ -11,6 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Online_Clinic.Common.Mappings;
+using AutoMapper;
+using Online_Clinic.Data.Concrats;
+using Online_Clinic.Data.Implementation;
+using Online_Clinic.Services.Contracts;
+using Online_Clinic.Services.Implementation;
 
 namespace Online_Clinic
 {
@@ -29,6 +35,12 @@ namespace Online_Clinic
             services.AddRazorPages();
             services.AddDbContext<ClinicContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+
+            services.AddAutoMapper(typeof(Maps));
+            //services.AddScoped<IRandevuRepository, RandevuRepository>();
+            //services.AddScoped<IBaðýþTalebiRepository, BaðýþTalebiRepository>();
+
+            services.AddScoped<IRandevuService, RandevuService>();
 
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>

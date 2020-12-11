@@ -184,6 +184,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Online-Clinic.Common\Online-Clinic.Common.csproj" />
     <ProjectReference Include="..\Online-Clinic.Data\Online-Clinic.Data.csproj" />
   </ItemGroup>
 

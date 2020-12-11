@@ -2854,6 +2854,20 @@
         "runtime": {
           "bin/placeholder/Online-Clinic.Data.dll": {}
         }
+      },
+      "Online-Clinic.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Online-Clinic.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Online-Clinic.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Online-Clinic.Services.dll": {}
+        }
       }
     }
   },
@@ -9064,6 +9078,11 @@
       "type": "project",
       "path": "../Online-Clinic.Data/Online-Clinic.Data.csproj",
       "msbuildProject": "../Online-Clinic.Data/Online-Clinic.Data.csproj"
+    },
+    "Online-Clinic.Services/1.0.0": {
+      "type": "project",
+      "path": "../Online-Clinic.Services/Online-Clinic.Services.csproj",
+      "msbuildProject": "../Online-Clinic.Services/Online-Clinic.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9074,7 +9093,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.10",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
       "Online-Clinic.Common >= 1.0.0",
-      "Online-Clinic.Data >= 1.0.0"
+      "Online-Clinic.Data >= 1.0.0",
+      "Online-Clinic.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9109,6 +9129,9 @@
             },
             "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj": {
               "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj"
+            },
+            "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Services\\Online-Clinic.Services.csproj": {
+              "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Services\\Online-Clinic.Services.csproj"
             }
           }
         }

@@ -5,4 +5,12 @@
     <RootNamespace>Online_Clinic.Common</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Online-Clinic.Data\Online-Clinic.Data.csproj" />
+  </ItemGroup>
+
 </Project>
