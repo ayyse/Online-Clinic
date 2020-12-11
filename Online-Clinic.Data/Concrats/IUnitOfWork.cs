@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Online_Clinic.Data.Concrats
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        void Save();
     }
 }
