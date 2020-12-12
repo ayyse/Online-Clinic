@@ -2860,6 +2860,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Online-Clinic.Common": "1.0.0",
           "Online-Clinic.Data": "1.0.0"
         },
         "compile": {

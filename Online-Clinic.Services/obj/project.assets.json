@@ -1550,6 +1550,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Online-Clinic.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Online-Clinic.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Online-Clinic.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Online-Clinic.Common.dll": {}
+        }
+      },
       "Online-Clinic.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5875,6 +5889,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Online-Clinic.Common/1.0.0": {
+      "type": "project",
+      "path": "../Online-Clinic.Common/Online-Clinic.Common.csproj",
+      "msbuildProject": "../Online-Clinic.Common/Online-Clinic.Common.csproj"
+    },
     "Online-Clinic.Data/1.0.0": {
       "type": "project",
       "path": "../Online-Clinic.Data/Online-Clinic.Data.csproj",
@@ -5884,6 +5903,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.0",
+      "Online-Clinic.Common >= 1.0.0",
       "Online-Clinic.Data >= 1.0.0"
     ]
   },
@@ -5914,6 +5934,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Common\\Online-Clinic.Common.csproj": {
+              "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Common\\Online-Clinic.Common.csproj"
+            },
             "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj": {
               "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj"
             }

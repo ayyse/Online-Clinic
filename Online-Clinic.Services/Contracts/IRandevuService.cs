@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Online_Clinic.Common.ResultModels;
+using Online_Clinic.Data.DbModels;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Online_Clinic.Services.Contracts
 {
-    interface IRandevuService
+    public interface IRandevuService
     {
+        Result<List<Randevu>> GetAllRandevu();
     }
 }

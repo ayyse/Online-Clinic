@@ -172,6 +172,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Common\\Online-Clinic.Common.csproj": {
+                "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Common\\Online-Clinic.Common.csproj"
+              },
               "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj": {
                 "projectPath": "C:\\Users\\Acer\\source\\repos\\Online-Clinic\\Online-Clinic.Data\\Online-Clinic.Data.csproj"
               }
