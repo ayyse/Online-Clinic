@@ -1,20 +1,15 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Online_Clinic.DataAccess;
-using Online_Clinic.Data.DataContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Online_Clinic.Common.Mappings;
-using AutoMapper;
 using Online_Clinic.Data.Concrats;
+using Online_Clinic.Data.DataContext;
 using Online_Clinic.Data.Implementation;
+using Online_Clinic.DataAccess;
 using Online_Clinic.Services.Contracts;
 using Online_Clinic.Services.Implementation;
 
@@ -41,8 +36,9 @@ namespace Online_Clinic
             //services.AddScoped<IBaðýþTalebiRepository, BaðýþTalebiRepository>();
 
             services.AddScoped<IRandevuService, RandevuService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<AppDbContext>
                 (o => o.UseSqlServer(Configuration.GetConnectionString("MyNewDatabase")));
         }

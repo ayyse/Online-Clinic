@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Online_Clinic.Common.ResultModels
 {
+    //Result tipini generic verdim her tip gelebilsin diye
     public class Result<T> : IResult
     {
         public bool IsSuccess { get; set; }

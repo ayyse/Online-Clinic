@@ -3,11 +3,11 @@ using Online_Clinic.Data.DataContext;
 
 namespace Online_Clinic.Data.Implementation
 {
-    public class UnitOFWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ClinicContext _ctx;
 
-        public UnitOFWork(ClinicContext ctx)
+        public UnitOfWork(ClinicContext ctx)
         {
             _ctx = ctx;
             bağışTalebi = new BağışTalebiRepository(_ctx);

@@ -75,6 +75,16 @@
     <None Include="wwwroot\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
     <None Include="wwwroot\fonts\poppins\Poppins-Thin.ttf" />
     <None Include="wwwroot\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <None Include="wwwroot\HomeIndex\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\HomeIndex\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\HomeIndex\js\bootstrap.min.js" />
+    <None Include="wwwroot\HomeIndex\js\custom.js" />
+    <None Include="wwwroot\HomeIndex\js\jquery.js" />
+    <None Include="wwwroot\HomeIndex\js\jquery.stellar.min.js" />
+    <None Include="wwwroot\HomeIndex\js\jquery.sticky.js" />
+    <None Include="wwwroot\HomeIndex\js\owl.carousel.min.js" />
+    <None Include="wwwroot\HomeIndex\js\smoothscroll.js" />
+    <None Include="wwwroot\HomeIndex\js\wow.min.js" />
     <None Include="wwwroot\images\icons\favicon.ico" />
     <None Include="wwwroot\js\main.js" />
     <None Include="wwwroot\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -170,6 +180,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

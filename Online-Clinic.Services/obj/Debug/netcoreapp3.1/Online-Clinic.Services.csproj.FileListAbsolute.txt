@@ -7,3 +7,8 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\obj\Debug\netcor
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\obj\Debug\netcoreapp3.1\Online-Clinic.Services.csproj.CoreCompileInputs.cache
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\obj\Debug\netcoreapp3.1\Online-Clinic.Services.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\obj\Debug\netcoreapp3.1\Online-Clinic.Services.pdb
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\bin\Debug\netcoreapp3.1\Online-Clinic.Common.dll
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\bin\Debug\netcoreapp3.1\Online-Clinic.Data.dll
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\bin\Debug\netcoreapp3.1\Online-Clinic.Common.pdb
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\bin\Debug\netcoreapp3.1\Online-Clinic.Data.pdb
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Services\obj\Debug\netcoreapp3.1\Online-Clinic.Services.csproj.CopyComplete

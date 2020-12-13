@@ -1,46 +1,60 @@
-﻿using Online_Clinic.Common.ResultModels;
+﻿using AutoMapper;
+using Online_Clinic.Common.ResultModels;
+using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DbModels;
 using Online_Clinic.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Online_Clinic.Services.Implementation
 {
     public class RandevuService : IRandevuService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public RandevuService(IUnitOfWork unitOfWork)
+        public RandevuService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
-        public Result<List<Randevu>> GetAllRandevu()
+        public Result<List<RandevuVM>> GetAllRandevu()
         {
             var data = _unitOfWork.randevu.GetAll().ToList();
 
+            #region AutoMapper olmayan yöntem
+            //if (data != null)
+            //{
+            //    List<Randevu> returnData = new List<Randevu>();
+            //    foreach (var item in data)
+            //    {
+            //        returnData.Add(new Randevu()
+            //        {
+            //            Id = item.Id,
+            //            Doktor = item.Doktor,
+            //            Tarih = item.Tarih,
+            //            Saat = item.Saat
 
-            List<Randevu> returnData = new List<Randevu>();
-            if (data != null)
-            {
-                foreach (var item in data)
-                {
-                    returnData.Add(new Randevu()
-                    {
-                        Id = item.Id,
-                        Doktor = item.Doktor,
-                        Tarih = item.Tarih,
-                        Saat = item.Saat
+            //        });
+            //    }
+            //    return new Result<List<Randevu>>(true, "Başarılı", returnData);
+            //}
+            //else
+            //    return new Result<List<Randevu>>(false, "Başarısız."); 
+            #endregion
 
-                    });
-                }
-                return new Result<List<Randevu>>(true, "İşleminiz başarılı...", returnData);
-            }
-            else
-                return new Result<List<Randevu>>(false, "Veri bulunamadı");
+            #region AutoMapper ile
+            var randevu = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
+            return new Result<List<RandevuVM>>(true, "Başarılı", randevu); 
+            #endregion
+        }
+
+        Result<List<Randevu>> IRandevuService.GetAllRandevu()
+        {
+            throw new NotImplementedException();
         }
     }
 }
