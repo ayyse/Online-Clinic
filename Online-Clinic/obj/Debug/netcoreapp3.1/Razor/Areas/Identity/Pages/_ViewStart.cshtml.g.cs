@@ -33,8 +33,15 @@ using Online_Clinic.Areas.Identity.Pages;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Areas\Identity\Pages\_ViewImports.cshtml"
+using Online_Clinic.Areas.Identity.Pages.Account;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"43e0bf0d61f9a553d2f59156ad2cdff9b3bdd158", @"/Areas/Identity/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5bab9df0976226cef968ec6de31d524e5c234a55", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aa0ee13ac1c3f3cdcb33eb1eea89fe4072e221d2", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

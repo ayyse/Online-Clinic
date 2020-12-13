@@ -1,83 +1,13 @@
-﻿@model IEnumerable<Online_Clinic.DataAccess.Doktor>
+﻿@*@model IEnumerable<Online_Clinic.DataAccess.Doktor>*@
+
+@model System.Collections.Generic.List<Online_Clinic.DataAccess.Doktor>
+
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<a class="btn btn-success" asp-controller="Randevu" asp-action="Index">Randevu Al</a>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AdSoyad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoğumTarihi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cinsiyet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Branş)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Özgeçmiş)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kurum)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Şifre)
-            </th>*@
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdSoyad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoğumTarihi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cinsiyet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branş)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Özgeçmiş)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kurum)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Şifre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DoktorID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DoktorID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DoktorID">Delete</a>
-            </td>*@
-        </tr>
-}
-    </tbody>
-</table>
+
