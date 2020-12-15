@@ -2,13 +2,13 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
 
-<h4>Doktor Kayıt</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
+        <h4>Doktor Kayıt</h4>
+        <hr />
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -22,18 +22,18 @@
                 <input asp-for="DoğumTarihi" class="form-control" />
             </div>
             <br />
-            <div>CİNSİYET</div>
+            <label for="exampleTextarea">CİNSİYET</label>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
                     Kadın
-                </label>
+                </div>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                     Erkek
-                </label>
+                </div>
             </div>
             <br />
             <div class="form-group">
@@ -92,6 +92,6 @@
     </div>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Services.Contracts;
 
 namespace Online_Clinic.Controllers
@@ -14,16 +15,40 @@ namespace Online_Clinic.Controllers
             _randevuService = randevuService;
         }
 
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var data = _randevuService.GetAllRandevu();
-
-            if(data.IsSuccess)
-            {
+            if (data.IsSuccess)
+            {  
                 var result = data.Data;
                 return View(result);
             }
+            return View(data);
+        }
+
+        public IActionResult Create()
+        {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(RandevuVM model)
+        {
+            if(ModelState.IsValid)
+            {
+                var data = _randevuService.CreateRandevu(model);
+                if(data.IsSuccess)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View(model);
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
     }
 }

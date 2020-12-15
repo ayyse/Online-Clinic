@@ -3,31 +3,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-    <div class="w3-container">
-        <ul class="navbar-nav flex-grow-0">
-            <li class="nav-item" style="margin-top:200px">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Bağışçı" asp-action="Create">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">BAĞIŞÇI</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Doktor" asp-action="Create">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">DOKTOR</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Hasta" asp-action="Create">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">HASTA</button>
-                </a>
-            </li>
-        </ul>
+    <div style="margin-top:150px; margin-bottom:50px">
+        <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Bağışçı" asp-action="Create">Bağışçı</a>
+        <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Doktor" asp-action="Create">Doktor</a>
+        <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Hasta" asp-action="Create">Hasta</a>
     </div>
-
 </body>
-</html>

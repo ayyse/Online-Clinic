@@ -5,32 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>Create</h1>
-
-<h4>Hasta</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
+        <h4>Hasta Kayıt</h4>
+        <hr />
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -44,18 +22,18 @@
                 <input asp-for="DoğumTarihi" class="form-control" />
             </div>
             <br />
-            <div>CİNSİYET</div>
+            <label for="exampleTextarea">CİNSİYET</label>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
                     Kadın
-                </label>
+                </div>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                     Erkek
-                </label>
+                </div>
             </div>
             <br />
             <div class="form-group">
@@ -63,48 +41,48 @@
                 <input asp-for="HastalıkGeçmişi" style="text-align:center" class="form-control" />
             </div>
             <br />
-            <div>KRONİK HASTALIKLAR</div>
+            <label for="exampleTextarea">KRONİK HASTALIKLAR</label>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Hipertansiyon
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     KOAH Hastalığı
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Şeker Hastalığı(Diyabet)
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Astım
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Böbrek Hastalığı
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Kalp/Damar Hastalığı
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Karaciğer Hastalığı
-                </label>
+                </div>
             </div>
             <br />
             <div class="form-group">
@@ -125,6 +103,6 @@
     </div>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@

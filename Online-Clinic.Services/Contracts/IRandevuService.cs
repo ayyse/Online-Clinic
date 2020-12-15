@@ -8,5 +8,7 @@ namespace Online_Clinic.Services.Contracts
     public interface IRandevuService
     {
         Result<List<RandevuVM>> GetAllRandevu();
+
+        Result<RandevuVM> CreateRandevu(RandevuVM model);
     }
 }

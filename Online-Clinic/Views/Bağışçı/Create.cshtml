@@ -6,8 +6,8 @@
 }
 
 
-<div class="row" >
-    <div class="col-md-4" style="margin: auto">
+<div class="row" style="margin:auto">
+    <div class="col-md-4" style="margin:auto">
         <h4>Bağışçı Kayıt</h4>
         <br />
         <form asp-action="Create">
@@ -24,32 +24,32 @@
                 <small class="form-text text-muted">**Bireysel bağışçılarımız içindir</small>
             </div>
             <br />
-            <div>CİNSİYET</div>
+            <label for="exampleTextarea">CİNSİYET</label>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
                     Kadın
-                </label>
+                </div>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                     Erkek
-                </label>
+                </div>
             </div>
             <br />
-            <div>TÜR</div>
+            <label for="exampleTextarea">TÜR</label>
             <div class="form-check">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Bireysel
-                </label>
+                </div>
             </div>
             <div class="form-check disabled">
-                <label class="form-check-label">
+                <div>
                     <input class="form-check-input" type="checkbox" value="">
                     Kurumsal
-                </label>
+                </div>
             </div>
             <br />
             <div class="form-group">
@@ -92,6 +92,6 @@
     </div>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@

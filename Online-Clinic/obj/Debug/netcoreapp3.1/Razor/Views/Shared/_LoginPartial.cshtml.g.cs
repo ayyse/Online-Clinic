@@ -27,6 +27,13 @@ using Online_Clinic.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 4 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Views\_ViewImports.cshtml"
+using Online_Clinic.Common.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Views\Shared\_LoginPartial.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -34,7 +41,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63d7939c678ed8bc31b411b22b49a523da3eee7a", @"/Views/Shared/_LoginPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b70cb0d3808a9ce86398f530af458e8fd20d81b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"42c25bf7197ad1c2c6febaf404c6f699be280e0c", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Identity", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,9 +90,9 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a6769", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a6970", async() => {
                 WriteLiteral("\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a7117", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a7318", async() => {
                     WriteLiteral("Hello ");
 #nullable restore
 #line 11 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Views\Shared\_LoginPartial.cshtml"
@@ -159,7 +166,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a12243", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a12444", async() => {
                 WriteLiteral("Register");
             }
             );
@@ -177,7 +184,7 @@ else
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a13616", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63d7939c678ed8bc31b411b22b49a523da3eee7a13817", async() => {
                 WriteLiteral("Login");
             }
             );

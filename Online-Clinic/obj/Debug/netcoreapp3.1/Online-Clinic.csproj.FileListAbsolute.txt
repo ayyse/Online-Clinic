@@ -483,3 +483,4 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Randevu\Index.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Randevu\Create.cshtml.g.cs

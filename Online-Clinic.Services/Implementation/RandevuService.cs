@@ -21,13 +21,35 @@ namespace Online_Clinic.Services.Implementation
             _mapper = mapper;
         }
 
+
         public Result<List<RandevuVM>> GetAllRandevu()
         {
             var data = _unitOfWork.randevuRepository.GetAll().ToList();
 
-            var randevu = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
-            return new Result<List<RandevuVM>>(true, "Başarılı", randevu);
+            var randevular = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
+            return new Result<List<RandevuVM>>(true, "Başarılı", randevular);
 
+        }
+
+        public Result<RandevuVM> CreateRandevu(RandevuVM model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    var randevu = _mapper.Map<RandevuVM, Randevu>(model);
+                    randevu.Tarih = DateTime.Now;
+                    _unitOfWork.randevuRepository.Add(randevu);
+                    _unitOfWork.Save();
+                    return new Result<RandevuVM>(true, "Randevu işleminiz başarılı.");
+                }
+                catch (Exception ex)
+                {
+                    return new Result<RandevuVM>(false, "Randevu oluşturulurken bir hata oluştu." + ex.Message.ToString());
+                }
+            }
+            else
+                return new Result<RandevuVM>(false, "Boş Olamaz");
         }
 
         //public Result<List<RandevuVM>> GetAllRandevu()
