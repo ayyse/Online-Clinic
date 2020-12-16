@@ -24,8 +24,8 @@ namespace Online_Clinic.Data.DbModels
 
         public string TedaviEdenDoktor { get; set; }
 
-        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
-        public string Email { get; set; }
+        //[Required(ErrorMessage = "Bu alan boş geçilemez!")]
+        //public string Email { get; set; }
 
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Şifre { get; set; }

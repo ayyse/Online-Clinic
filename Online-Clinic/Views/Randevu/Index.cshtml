@@ -5,7 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2> Randevu Listesi</h2>
+        <p>@DateTime.Now</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Ad Soyad</th>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>E-mail</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.TamAd</td>
+                        <td>@item.Tarih</td>
+                        <td>@item.Saat</td>
+                        <td>@item.Email</td>
+                        <td>@item.Telefon</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
+
+
+@*<h1>Index</h1>
 
 <p>
     <a asp-action="Index">Randevularım</a>
@@ -21,7 +65,7 @@
                 Tarih
             </th>
             <th>
-               Saat
+                Saat
             </th>
             <th>
                 Telefon
@@ -56,7 +100,7 @@
             }
         }
     </tbody>
-</table>
+</table>*@
 
 
 

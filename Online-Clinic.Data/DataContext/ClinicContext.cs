@@ -15,13 +15,14 @@ namespace Online_Clinic.Data.DataContext
             
         }
 
-        public DbSet<Doktor> Doktorlar { get; set; }
+        public DbSet<Doktor> Doktor { get; set; }
 
-        public DbSet<Hasta> Hastalar { get; set; }
+        public DbSet<Hasta> Hasta { get; set; }
 
-        public DbSet<Bağışçı> Bağışçılar { get; set; }
+        public DbSet<Bağışçı> Bağışçı { get; set; }
 
         public DbSet<BağışTalebi> HastaBağışTalepleri { get; set; }
+
         public DbSet<Randevu> Randevular { get; set; }
 
     }

@@ -16,7 +16,6 @@ namespace Online_Clinic.Data.Implementation
         {
             _ctx = ctx;
             this.dbSet = ctx.Set<T>();
-
         }
 
         public void Add(T entity)

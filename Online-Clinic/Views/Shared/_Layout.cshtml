@@ -82,10 +82,8 @@
                         <li><a asp-controller="Bağışçı" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>
                         <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
                         <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
-                        <li class="appointment-btn"><a asp-controller="Home" asp-action="Login">Giriş Yap</a></li>
-                        <li class="appointment-btn"><a asp-controller="Home" asp-action="Register">Üye Ol</a></li>
-                        @*<li class="appointment-btn"><a asp-area="Identity" asp-page="/Register">Register</a></li>
-                            <li class="appointment-btn"><a asp-area="Identity" asp-page="/Login">Login</a></li>*@
+                        <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                        <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
                     </ul>
                 </div>
             </div>
