@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Online_Clinic.DataAccess;
+using Online_Clinic.Data.DataContext;
 using Online_Clinic.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Online_Clinic.Controllers
 {
@@ -21,7 +16,7 @@ namespace Online_Clinic.Controllers
         }
         public IActionResult Index()
         {
-            AppDbContext context = new AppDbContext();
+            ClinicContext context = new ClinicContext();
             return View();
         }
 

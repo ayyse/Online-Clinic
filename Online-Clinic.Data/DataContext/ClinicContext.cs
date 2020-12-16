@@ -9,6 +9,10 @@ namespace Online_Clinic.Data.DataContext
 {
     public class ClinicContext : IdentityDbContext
     {
+        public ClinicContext()
+        {
+        }
+
         public ClinicContext(DbContextOptions<ClinicContext> options)
             : base(options)
         {

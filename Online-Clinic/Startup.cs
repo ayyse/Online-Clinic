@@ -1,7 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,13 +32,10 @@ namespace Online_Clinic
                 (options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
             services.AddAutoMapper(typeof(Maps));
-            //services.AddScoped<IRandevuRepository, RandevuRepository>();
-            //services.AddScoped<IBaðýþTalebiRepository, BaðýþTalebiRepository>();
-
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ClinicContext>();
+            services.AddDefaultIdentity<Hasta>().AddEntityFrameworkStores<ClinicContext>();
 
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
             //services.AddDbContext<AppDbContext>

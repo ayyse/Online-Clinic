@@ -10,8 +10,8 @@ namespace Online_Clinic.Data.DbModels
 {
     public class Hasta : IdentityUser
     {
-        //[Required]
-        //public int HastaID { get; set; }
+        [Required]
+        public string HastaID { get; set; }
 
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string Ad { get; set; }
