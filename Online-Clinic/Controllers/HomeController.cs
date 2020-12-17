@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Online_Clinic.Data.DataContext;
 using Online_Clinic.Models;
 using System.Diagnostics;
+using Online_Clinic.Areas.Identity;
 
 namespace Online_Clinic.Controllers
 {
@@ -22,6 +23,7 @@ namespace Online_Clinic.Controllers
 
         public IActionResult Login()
         {
+            
             return View();
         }
         public IActionResult Register()

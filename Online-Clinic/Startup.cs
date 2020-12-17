@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,10 +33,11 @@ namespace Online_Clinic
                 (options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
             services.AddAutoMapper(typeof(Maps));
+
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddDefaultIdentity<Hasta>().AddEntityFrameworkStores<ClinicContext>();
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ClinicContext>();
 
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
             //services.AddDbContext<AppDbContext>
@@ -75,6 +77,9 @@ namespace Online_Clinic
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "Identity",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
