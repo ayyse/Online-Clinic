@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Online_Clinic.Common.Mappings;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DataContext;
-using Online_Clinic.Data.DbModels;
 using Online_Clinic.Data.Implementation;
 using Online_Clinic.Services.Contracts;
 using Online_Clinic.Services.Implementation;
@@ -36,8 +35,10 @@ namespace Online_Clinic
 
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ClinicContext>();
+
+            services.AddSession();
 
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
             //services.AddDbContext<AppDbContext>
@@ -74,6 +75,8 @@ namespace Online_Clinic
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Online_Clinic.Common.SessionOperations;
+using Online_Clinic.Data.Implementation;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Online_Clinic.Areas.Identity.Pages.Account
 {
@@ -20,14 +21,17 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UnitOfWork _unitOfWork;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager,
+            UnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         [BindProperty]
@@ -83,6 +87,33 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    //var userB = _userManager.FindByEmailAsync(Input.Email);
+                    //if(userB != null)
+                    //{
+                    //    var sessionContext = new SessionContext();
+                    //    sessionContext.Email = userB.Result.Email;
+                    //    sessionContext.Ad = userB.Result.NormalizedUserName;
+                    //    sessionContext.LoginID = userB.Result.Id;
+                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
+                    //}
+                    //var userD = _userManager.FindByEmailAsync(Input.Email);
+                    //if (userD != null)
+                    //{
+                    //    var sessionContext = new SessionContext();
+                    //    sessionContext.Email = userD.Result.Email;
+                    //    sessionContext.Ad = userD.Result.NormalizedUserName;
+                    //    sessionContext.LoginID = userD.Result.Id;
+                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
+                    //}
+                    //var userH = _userManager.FindByEmailAsync(Input.Email);
+                    //if (userH != null)
+                    //{
+                    //    var sessionContext = new SessionContext();
+                    //    sessionContext.Email = userH.Result.Email;
+                    //    sessionContext.Ad = userH.Result.NormalizedUserName;
+                    //    sessionContext.LoginID = userH.Result.Id;
+                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
+                    //}
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
