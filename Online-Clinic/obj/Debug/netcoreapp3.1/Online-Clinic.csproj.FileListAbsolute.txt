@@ -456,9 +456,7 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\M
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Randevu\Index.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Randevu\Create.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Bağışçı\Index.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Doktor\Index.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hasta\Index.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Visitor\Index.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
@@ -498,6 +496,3 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\HastaRegister.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\BağışçıRegister.cshtml.g.cs
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\DoktorRegister.cshtml.g.cs

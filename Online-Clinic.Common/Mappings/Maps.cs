@@ -10,8 +10,7 @@ namespace Online_Clinic.Common.Mappings
         {
             CreateMap<Randevu, RandevuVM>().ReverseMap();
             CreateMap<BağışTalebi, BağışTalebiVM>().ReverseMap();
-            CreateMap<Hasta, HastaVM>().ReverseMap();
-            CreateMap<Doktor, DoktorVM>().ReverseMap();
+            CreateMap<Visitor, VisitorVM>().ReverseMap();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Online_Clinic.Controllers
 {
-    public class HastaController : Controller
+    public class VisitorController : Controller
     {
         public IActionResult Index()
         {

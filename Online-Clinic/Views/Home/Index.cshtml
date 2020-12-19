@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Online_Clinic.Common.ViewModels.RandevuVM
+@{
     ViewData["Title"] = "Ana Sayfa";
     Layout = "/Views/Shared/_Layout.cshtml";
 }
@@ -200,7 +201,6 @@
     </div>
 </section>
 
-
 <!-- MAKE AN APPOINTMENT -->
 <section id="appointment" data-stellar-background-ratio="3" style="background-position: 0px 6726.2px;">
     <div class="container">
@@ -212,10 +212,83 @@
 
             <div class="col-md-6 col-sm-6">
                 <!-- CONTACT FORM HERE -->
-                <form id="appointment-form" role="form" method="post" action="#">
+                <form id="appointment-form" asp-controller="Randevu" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" data-wow-delay="0.4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                        <h2>Randevu Al</h2>
+                    </div>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="TamAd">Tam Adınız</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                            <span asp-validation-for="TamAd"></span>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="Bölüm">Bölüm Seçiniz</label>
+                            <select class="form-control">
+                                <option action>Seçiniz</option>
+                                <option>Beyin ve Sinir Cerrahisi</option>
+                                <option>Kalp ve Damar Cerrahisi</option>
+                                <option>Çocuk Cerrahisi</option>
+                                <option>Genel Cerrahi</option>
+                                <option>Göğüs Cerrahisi</option>
+                                <option>Kulak Burun Boğaz Hastalıkları</option>
+                                <option>Plastik Cerrahi</option>
+                                <option>Ortopedi</option>
+                                <option>Göz Hastalıkları</option>
+                                <option>Üroloji</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="Tarih">Tarih Seçiniz</label>
+                            <input type="date" name="date" value="" class="form-control">
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="Saat">Saat Seçiniz</label>
+                            <input type="time" name="time" value="" class="form-control">
+                        </div>
+
+
+
+                        <div class="col-md-12 col-sm-12">
+                            <label asp-for="Telefon">Telefon Numaranız</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                            <label asp-for="Email">E-mail Adresiniz</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                            <label asp-for="Mesaj">Eklemek İstediğiniz Bir Mesaj Var mı?</label>
+                            <textarea class="form-control" rows="5" id="message" name="message"></textarea>
+                            <button type="submit" class="form-control" id="cf-submit" name="submit">Randevu Al</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- MAKE AN APPOINTMENT -->
+<!--<section id="appointment" data-stellar-background-ratio="3" style="background-position: 0px 6726.2px;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <img src="~/HomeIndex/images/appointment-image.jpg" class="img-responsive" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-6">-->
+<!-- CONTACT FORM HERE -->
+<!--<form id="appointment-form" role="form" method="post" action="#">-->
+<!-- SECTION TITLE -->
+<!--<div class="section-title wow fadeInUp" data-wow-delay="0.4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
                         <h2>Make an appointment</h2>
                     </div>
 
@@ -258,9 +331,7 @@
 
         </div>
     </div>
-</section>
-
-
+</section>-->
 <!-- SCRIPTS -->
 <script src="~/HomeIndex/js/jquery.js"></script>
 <script src="~/HomeIndex/js/bootstrap.min.js"></script>

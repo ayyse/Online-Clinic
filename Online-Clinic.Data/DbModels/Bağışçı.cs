@@ -8,26 +8,14 @@ using System.Threading.Tasks;
 
 namespace Online_Clinic.Data.DbModels
 {
-    public class Bağışçı : IdentityUser
+    public class Bağışçı : Visitor
     {
-        [Required]
-        public int BağışçıID { get; set; }
-
-        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string DoğumTarihi { get; set; }
-        public string Cinsiyet { get; set; }
+        //    [Key]
+        //    public string BağışçıID { get; set; }
         public string Tür { get; set; } //Kurumsal mı bireysel mi?
         public string Kurum { get; set; } //Eğer kurumsal ise
         public string Özgeçmiş { get; set; }
         public string Adres { get; set; }
-
-        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
-        public string Email { get; set; }
-
-        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
-        public string Şifre { get; set; }
 
         [NotMapped]
         public List<Hasta> Hastalar { get; set; }

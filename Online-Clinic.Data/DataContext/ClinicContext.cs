@@ -18,10 +18,10 @@ namespace Online_Clinic.Data.DataContext
         {
             
         }
+        public DbSet<Visitor> Visitors { get; set; }
 
         public DbSet<BağışTalebi> HastaBağışTalepleri { get; set; }
 
         public DbSet<Randevu> Randevular { get; set; }
-
     }
 }

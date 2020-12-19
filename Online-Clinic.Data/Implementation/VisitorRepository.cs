@@ -4,11 +4,11 @@ using Online_Clinic.Data.DbModels;
 
 namespace Online_Clinic.Data.Implementation
 {
-    public class DoktorRepository : Repository<Doktor>, IDoktorRepository
+    public class VisitorRepository : Repository<Visitor>, IVisitorRepository
     {
         private readonly ClinicContext _ctx;
 
-        public DoktorRepository(ClinicContext ctx) : base(ctx)
+        public VisitorRepository(ClinicContext ctx) : base(ctx)
         {
             _ctx = ctx;
         }

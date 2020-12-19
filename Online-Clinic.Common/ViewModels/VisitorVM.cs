@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Online_Clinic.Common.ViewModels
 {
-    public class HastaVM
+    public class VisitorVM
     {
         public string HastaID { get; set; }
         public string Ad { get; set; }

@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Online_Clinic.Common.ConstantsModels;
 using Online_Clinic.Common.Mappings;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DataContext;
+using Online_Clinic.Data.DbModels;
 using Online_Clinic.Data.Implementation;
 using Online_Clinic.Services.Contracts;
 using Online_Clinic.Services.Implementation;
@@ -24,10 +26,10 @@ namespace Online_Clinic
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
             services.AddDbContext<ClinicContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
@@ -35,9 +37,15 @@ namespace Online_Clinic
 
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ClinicContext>();
 
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddRazorPages();
+
+            services.AddIdentity<Visitor, IdentityRole>().AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ClinicContext>();
+
+            services.AddMvc();
             services.AddSession();
 
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
@@ -48,7 +56,7 @@ namespace Online_Clinic
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<Visitor> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -73,6 +81,8 @@ namespace Online_Clinic
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            SeedData.Seed(userManager, roleManager);
 
             app.UseAuthorization();
 

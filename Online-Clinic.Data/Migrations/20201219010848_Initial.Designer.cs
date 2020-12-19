@@ -10,8 +10,8 @@ using Online_Clinic.Data.DataContext;
 namespace Online_Clinic.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20201216003551_NewMigr")]
-    partial class NewMigr
+    [Migration("20201219010848_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -223,140 +223,9 @@ namespace Online_Clinic.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.Bağışçı", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Adres")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("BağışçıID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Cinsiyet")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DoğumTarihi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Kurum")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Soyad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tür")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Özgeçmiş")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Şifre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Bağışçı");
-                });
-
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.Doktor", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnName("Doktor_Ad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Adres")
-                        .IsRequired()
-                        .HasColumnName("Doktor_Adres")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Branş")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cinsiyet")
-                        .HasColumnName("Doktor_Cinsiyet")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DoktorID")
-                        .HasColumnName("DoktorID1")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DoğumTarihi")
-                        .HasColumnName("Doktor_DoğumTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Kurum")
-                        .HasColumnName("Doktor_Kurum")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Soyad")
-                        .HasColumnName("Doktor_Soyad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Özgeçmiş")
-                        .HasColumnName("Doktor_Özgeçmiş")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Şifre")
-                        .IsRequired()
-                        .HasColumnName("Doktor_Şifre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Doktor");
-                });
-
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.Hasta", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnName("Hasta_Ad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cinsiyet")
-                        .HasColumnName("Hasta_Cinsiyet")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DoğumTarihi")
-                        .HasColumnName("Hasta_DoğumTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("HastalıkGeçmişi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KronikHastalıklar")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Soyad")
-                        .HasColumnName("Hasta_Soyad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TedaviEdenDoktor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Şifre")
-                        .IsRequired()
-                        .HasColumnName("Hasta_Şifre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Hasta");
-                });
-
             modelBuilder.Entity("Online_Clinic.Data.DbModels.BağışTalebi", b =>
                 {
-                    b.HasBaseType("Online_Clinic.Data.DbModels.Hasta");
-
-                    b.Property<string>("DoktorID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("HastaID")
+                    b.Property<string>("TalepID")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("Onay")
@@ -368,26 +237,15 @@ namespace Online_Clinic.Data.Migrations
                     b.Property<DateTime>("TalepTarihi")
                         .HasColumnType("datetime2");
 
-                    b.HasIndex("DoktorID");
+                    b.HasKey("TalepID");
 
-                    b.HasIndex("HastaID");
-
-                    b.HasDiscriminator().HasValue("BağışTalebi");
+                    b.ToTable("HastaBağışTalepleri");
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
                 {
-                    b.HasBaseType("Online_Clinic.Data.DbModels.Hasta");
-
-                    b.Property<string>("Doktor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HastaID")
-                        .HasColumnName("Randevu_HastaID")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("RandevuID")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Saat")
                         .HasColumnType("datetime2");
@@ -395,9 +253,34 @@ namespace Online_Clinic.Data.Migrations
                     b.Property<DateTime>("Tarih")
                         .HasColumnType("datetime2");
 
-                    b.HasIndex("HastaID");
+                    b.HasKey("RandevuID");
 
-                    b.HasDiscriminator().HasValue("Randevu");
+                    b.ToTable("Randevular");
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Visitor", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Ad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cinsiyet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DoğumTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Soyad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Şifre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Visitor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -449,24 +332,6 @@ namespace Online_Clinic.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.BağışTalebi", b =>
-                {
-                    b.HasOne("Online_Clinic.Data.DbModels.Doktor", "Doktor")
-                        .WithMany()
-                        .HasForeignKey("DoktorID");
-
-                    b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
-                        .WithMany()
-                        .HasForeignKey("HastaID");
-                });
-
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
-                {
-                    b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
-                        .WithMany()
-                        .HasForeignKey("HastaID");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,7 +2,7 @@
 
 namespace Online_Clinic.Data.Concrats
 {
-    public interface IHastaRepository : IRepositoryBase<Hasta>
+    public interface IVisitorRepository : IRepositoryBase<Visitor>
     {
     }
 }

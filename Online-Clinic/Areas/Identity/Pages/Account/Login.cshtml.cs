@@ -1,32 +1,34 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Online_Clinic.Common.SessionOperations;
-using Online_Clinic.Data.Implementation;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using Online_Clinic.Common.SessionOperations;
+using Online_Clinic.Data.Concrats;
+using Online_Clinic.Data.DbModels;
 
 namespace Online_Clinic.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<Visitor> _userManager;
+        private readonly SignInManager<Visitor> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, 
+        public LoginModel(SignInManager<Visitor> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager,
-            UnitOfWork unitOfWork)
+            UserManager<Visitor> userManager,
+            IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -52,9 +54,10 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
 
             [Required]
             [DataType(DataType.Password)]
+            [Display(Name = "Şifre")]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Beni Hatırla")]
             public bool RememberMe { get; set; }
         }
 
@@ -87,33 +90,15 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    //var userB = _userManager.FindByEmailAsync(Input.Email);
-                    //if(userB != null)
-                    //{
-                    //    var sessionContext = new SessionContext();
-                    //    sessionContext.Email = userB.Result.Email;
-                    //    sessionContext.Ad = userB.Result.NormalizedUserName;
-                    //    sessionContext.LoginID = userB.Result.Id;
-                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
-                    //}
-                    //var userD = _userManager.FindByEmailAsync(Input.Email);
-                    //if (userD != null)
-                    //{
-                    //    var sessionContext = new SessionContext();
-                    //    sessionContext.Email = userD.Result.Email;
-                    //    sessionContext.Ad = userD.Result.NormalizedUserName;
-                    //    sessionContext.LoginID = userD.Result.Id;
-                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
-                    //}
-                    //var userH = _userManager.FindByEmailAsync(Input.Email);
-                    //if (userH != null)
-                    //{
-                    //    var sessionContext = new SessionContext();
-                    //    sessionContext.Email = userH.Result.Email;
-                    //    sessionContext.Ad = userH.Result.NormalizedUserName;
-                    //    sessionContext.LoginID = userH.Result.Id;
-                    //    HttpContext.Session.SetString("AppUserSession", JsonConvert.SerializeObject(sessionContext));
-                    //}
+                    var user = _userManager.FindByEmailAsync(Input.Email);
+                    if(user != null)
+                    {
+                        var sessionContext = new SessionContext();
+                        sessionContext.Email = user.Result.Email;
+                        sessionContext.Ad = user.Result.NormalizedUserName;
+                        sessionContext.LoginID = user.Result.Id;
+                    }
+                    
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

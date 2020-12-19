@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Online_Clinic.Data.Migrations
 {
-    public partial class IdentityTables : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,11 +39,45 @@ namespace Online_Clinic.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Ad = table.Column<string>(nullable: true),
+                    Soyad = table.Column<string>(nullable: true),
+                    DoğumTarihi = table.Column<DateTime>(nullable: true),
+                    Cinsiyet = table.Column<string>(nullable: true),
+                    Şifre = table.Column<string>(nullable: true),
+                    Image = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HastaBağışTalepleri",
+                columns: table => new
+                {
+                    TalepID = table.Column<string>(nullable: false),
+                    TalepTarihi = table.Column<DateTime>(nullable: false),
+                    TalepAçıklaması = table.Column<string>(nullable: true),
+                    Onay = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HastaBağışTalepleri", x => x.TalepID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Randevular",
+                columns: table => new
+                {
+                    RandevuID = table.Column<string>(nullable: false),
+                    Tarih = table.Column<DateTime>(nullable: false),
+                    Saat = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Randevular", x => x.RandevuID);
                 });
 
             migrationBuilder.CreateTable(
@@ -208,6 +242,12 @@ namespace Online_Clinic.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "HastaBağışTalepleri");
+
+            migrationBuilder.DropTable(
+                name: "Randevular");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
