@@ -36,6 +36,9 @@ namespace Online_Clinic
             services.AddAutoMapper(typeof(Maps));
 
             services.AddScoped<IRandevuService, RandevuService>();
+            services.AddScoped<IDoktorService, DoktorService>();
+            services.AddScoped<IHastaService, HastaService>();
+            services.AddScoped<IBaðýþçýService, BaðýþçýService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
@@ -90,10 +93,10 @@ namespace Online_Clinic
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "areas",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

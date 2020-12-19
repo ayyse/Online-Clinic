@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
+
 @inject SignInManager<Online_Clinic.Data.DbModels.Visitor> SignInManager
 @inject UserManager<Online_Clinic.Data.DbModels.Visitor> UserManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,15 +83,20 @@
                 <!-- MENU LINKS -->
                 <div class="collapse navbar-collapse">
                     <partial name="_LoginPartial" />
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>
-                            <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>
-                            <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
-                            <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
-                        </ul>
-                    }
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>
+                        <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>
+                        <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
+                        <li><a asp-controller="Visitor" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            if (User.IsInRole(ResultConstant.HastaRole))
+                            {
+                                <li><a asp-controller="Talep" asp-action="Create" class="smoothScroll">Bağış Talebi</a></li>
+                            }
+                        }
+                    </ul>
+                    
                 </div>
             </div>
         </section>

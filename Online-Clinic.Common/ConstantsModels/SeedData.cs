@@ -39,11 +39,29 @@ namespace Online_Clinic.Common.ConstantsModels
                 var result = roleManager.CreateAsync(role).Result;
             }
 
-            if (!roleManager.RoleExistsAsync(ResultConstant.VisitorRole).Result)
+            if (!roleManager.RoleExistsAsync(ResultConstant.DoktorRole).Result)
             {
                 var role = new IdentityRole
                 {
-                    Name = ResultConstant.VisitorRole
+                    Name = ResultConstant.DoktorRole
+                };
+                var result = roleManager.CreateAsync(role).Result;
+            }
+
+            if (!roleManager.RoleExistsAsync(ResultConstant.HastaRole).Result)
+            {
+                var role = new IdentityRole
+                {
+                    Name = ResultConstant.HastaRole
+                };
+                var result = roleManager.CreateAsync(role).Result;
+            }
+
+            if (!roleManager.RoleExistsAsync(ResultConstant.BağışçıRole).Result)
+            {
+                var role = new IdentityRole
+                {
+                    Name = ResultConstant.BağışçıRole
                 };
                 var result = roleManager.CreateAsync(role).Result;
             }

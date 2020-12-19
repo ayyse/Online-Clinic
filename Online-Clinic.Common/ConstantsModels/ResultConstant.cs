@@ -13,7 +13,12 @@ namespace Online_Clinic.Common.ConstantsModels
         public const string AdminPassword = "Ayse123.";
 
 
-        public const string VisitorRole = "Visitor";
+        public const string DoktorRole = "Doktor";
+
+        public const string HastaRole = "Hasta";
+
+        public const string BağışçıRole = "Bağışçı";
+
 
 
     }

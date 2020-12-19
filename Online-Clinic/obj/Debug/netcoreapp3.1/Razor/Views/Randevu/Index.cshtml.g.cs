@@ -26,8 +26,15 @@ using Online_Clinic.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Views\_ViewImports.cshtml"
+using Online_Clinic.Common.ConstantsModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fe0af7c97adddce1554e58bd23e49d83512a92f7", @"/Views/Randevu/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"96f5ac5c40f6fcadfacf8fc911de49c48b3f8421", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b9ea1ed40c40e0b0cba344b54846f1a361f71e3", @"/Views/_ViewImports.cshtml")]
     public class Views_Randevu_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.RandevuVM>>
     {
         #line hidden
@@ -66,7 +73,7 @@ using Online_Clinic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe0af7c97adddce1554e58bd23e49d83512a92f73630", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe0af7c97adddce1554e58bd23e49d83512a92f73836", async() => {
                 WriteLiteral(@"
     <title>Bootstrap Example</title>
     <meta charset=""utf-8"">
@@ -87,7 +94,7 @@ using Online_Clinic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe0af7c97adddce1554e58bd23e49d83512a92f75046", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe0af7c97adddce1554e58bd23e49d83512a92f75252", async() => {
                 WriteLiteral("\r\n\r\n    <div class=\"container\">\r\n        <h2> Randevu Listesi</h2>\r\n        <p>");
 #nullable restore
 #line 22 "C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\Views\Randevu\Index.cshtml"

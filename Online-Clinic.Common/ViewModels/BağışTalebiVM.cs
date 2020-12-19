@@ -14,6 +14,6 @@ namespace Online_Clinic.Common.ViewModels
         public VisitorVM HastaVm { get; set; }
 
         public string DoktorID { get; set; }
-        public DoktorVM DoktorVm { get; set; }
+        public HastaVM DoktorVm { get; set; }
     }
 }
