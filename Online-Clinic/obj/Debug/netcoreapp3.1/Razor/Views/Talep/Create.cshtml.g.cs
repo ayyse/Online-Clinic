@@ -34,7 +34,7 @@ using Online_Clinic.Common.ConstantsModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"92daf9b6fa8015f986e2de877e55525d5afb25af", @"/Views/Talep/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b9ea1ed40c40e0b0cba344b54846f1a361f71e3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d67cdb5dc8871a5afb10d48f416cba04b19d4abd", @"/Views/_ViewImports.cshtml")]
     public class Views_Talep_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Online_Clinic.Data.DbModels.BağışTalebi>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

@@ -237,7 +237,7 @@ namespace Online_Clinic.Data.Migrations
 
                     b.HasKey("TalepID");
 
-                    b.ToTable("HastaBağışTalepleri");
+                    b.ToTable("BağışTalepleri");
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
@@ -279,6 +279,63 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Visitor");
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Bağışçı", b =>
+                {
+                    b.HasBaseType("Online_Clinic.Data.DbModels.Visitor");
+
+                    b.Property<string>("Adres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Kurum")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tür")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Özgeçmiş")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Bağışçı");
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Doktor", b =>
+                {
+                    b.HasBaseType("Online_Clinic.Data.DbModels.Visitor");
+
+                    b.Property<string>("Adres")
+                        .HasColumnName("Doktor_Adres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Branş")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Kurum")
+                        .HasColumnName("Doktor_Kurum")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Özgeçmiş")
+                        .HasColumnName("Doktor_Özgeçmiş")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Doktor");
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Hasta", b =>
+                {
+                    b.HasBaseType("Online_Clinic.Data.DbModels.Visitor");
+
+                    b.Property<string>("HastalıkGeçmişi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KronikHastalıklar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TedaviEdenDoktor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Hasta");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

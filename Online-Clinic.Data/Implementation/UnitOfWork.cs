@@ -13,11 +13,14 @@ namespace Online_Clinic.Data.Implementation
             bağışTalebi = new BağışTalebiRepository(_ctx);
             randevuRepository = new RandevuRepository(_ctx);
             visitorRepository = new VisitorRepository(_ctx);
+            doktorRepository = new DoktorRepository(_ctx);
+
         }
 
         public IBağışTalebiRepository bağışTalebi { get; private set; }
         public IRandevuRepository randevuRepository { get; private set; }
         public IVisitorRepository visitorRepository { get; private set; }
+        public IDoktorRepository doktorRepository { get; private set; }
 
 
         public void Save()

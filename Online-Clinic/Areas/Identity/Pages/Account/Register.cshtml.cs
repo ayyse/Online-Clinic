@@ -60,9 +60,9 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
             [Display(Name = "Doğum Tarihi")]
             public DateTime DoğumTarihi { get; set; }
 
-            [Required]
-            [Display(Name = "Cinsiyet")]
-            public string Cinsiyet { get; set; }
+            //[Required]
+            //[Display(Name = "Cinsiyet")]
+            //public string Cinsiyet { get; set; }
 
             [Required]
             [EmailAddress]
@@ -99,7 +99,7 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                     Ad = Input.Ad, 
                     Soyad = Input.Soyad,
                     DoğumTarihi = Input.DoğumTarihi,
-                    Cinsiyet = Input.Cinsiyet,
+                    //Cinsiyet = Input.Cinsiyet,
                     Şifre = Input.Password
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);

@@ -34,7 +34,7 @@ using Online_Clinic.Common.ConstantsModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"78c9eb63191e2a8a5695a28f9c25b07455ccbc8c", @"/Views/Talep/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b9ea1ed40c40e0b0cba344b54846f1a361f71e3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d67cdb5dc8871a5afb10d48f416cba04b19d4abd", @"/Views/_ViewImports.cshtml")]
     public class Views_Talep_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.BağışTalebiVM>>
     {
         #line hidden

@@ -3,6 +3,7 @@
 
 @inject SignInManager<Online_Clinic.Data.DbModels.Visitor> SignInManager
 @inject UserManager<Online_Clinic.Data.DbModels.Visitor> UserManager
+
 @*@if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
@@ -26,17 +27,17 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-controller="Home" asp-action="Index" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @UserManager.GetUserName(User)!</a>
-            </li>
-            <li class="appointment-btn">
-                <a asp-controller="Home" asp-action="Index">Çıkış Yap</a>
-            </li>
+    var girisYapanKullanici = await UserManager.GetUserAsync(User);
+    var kullanicininTanimlandigiRoller = await UserManager.GetRolesAsync(girisYapanKullanici);
 
-        </ul>
-    </form>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @girisYapanKullanici.UserName!</b></a>
+    </li>
+    <li class="nav-item">
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
 }
 else
 {
@@ -45,3 +46,4 @@ else
         <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a></li>
     </ul>
 }
+

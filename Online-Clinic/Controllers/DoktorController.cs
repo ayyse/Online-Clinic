@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Online_Clinic.Common.ConstantsModels;
 using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Services.Contracts;
 using System;
@@ -17,6 +19,8 @@ namespace Online_Clinic.Controllers
             _doktorService = doktorService;
         }
 
+
+        [Authorize(Roles = ResultConstant.DoktorRole)]
         public IActionResult Index()
         {
             var data = _doktorService.GetAllDoktor();

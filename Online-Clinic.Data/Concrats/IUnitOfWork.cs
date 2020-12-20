@@ -8,6 +8,8 @@ namespace Online_Clinic.Data.Concrats
         IBağışTalebiRepository bağışTalebi { get; }
         IRandevuRepository randevuRepository { get; }
         IVisitorRepository visitorRepository { get; }
+        IDoktorRepository doktorRepository { get; }
+
         void Save();
     }
 }

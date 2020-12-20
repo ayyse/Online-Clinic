@@ -10,6 +10,6 @@ namespace Online_Clinic.Services.Contracts
     {
         Result<List<DoktorVM>> GetAllDoktor();
 
-        Result<DoktorVM> Register(DoktorVM doktor);
+        Result<DoktorVM> Register(DoktorVM model);
     }
 }

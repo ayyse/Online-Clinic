@@ -45,7 +45,8 @@ namespace Online_Clinic
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
-            services.AddIdentity<Visitor, IdentityRole>().AddDefaultTokenProviders()
+            services.AddIdentity<Visitor, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ClinicContext>();
 
             services.AddMvc();

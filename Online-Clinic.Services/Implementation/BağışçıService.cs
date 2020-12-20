@@ -13,7 +13,7 @@ namespace Online_Clinic.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public Result<BağışçıVM> Register(BağışçıVM bağışçı)
+        public Result<BağışçıVM> Register(BağışçıVM model)
         {
             throw new NotImplementedException();
         }

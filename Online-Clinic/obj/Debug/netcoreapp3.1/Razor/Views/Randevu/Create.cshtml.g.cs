@@ -34,7 +34,7 @@ using Online_Clinic.Common.ConstantsModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6ac855fb4c7ae59923e76a3dd300e633caedda1", @"/Views/Randevu/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b9ea1ed40c40e0b0cba344b54846f1a361f71e3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d67cdb5dc8871a5afb10d48f416cba04b19d4abd", @"/Views/_ViewImports.cshtml")]
     public class Views_Randevu_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Online_Clinic.Common.ViewModels.RandevuVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/HomeIndex/images/appointment-image.jpg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

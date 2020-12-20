@@ -28,27 +28,28 @@
                 <input asp-for="Input.DoğumTarihi" class="form-control" />
                 <span asp-validation-for="Input.DoğumTarihi" class="text-danger"></span>
             </div>
-            <div>
-                <label for="exampleTextarea">CİNSİYET</label>
+            @*<div>
+                <label asp-for="Input.Cinsiyet">CİNSİYET</label>
                 <div class="form-check">
                     <div>
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
                         Kadın
                     </div>
                 </div>
                 <div class="form-check">
                     <div>
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                         Erkek
                     </div>
                 </div>
                 <div class="form-check">
                     <div>
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                         Belirtmek İstemiyorum
                     </div>
                 </div>
-            </div>
+                <span asp-validation-for="Input.Cinsiyet" class="text-danger"></span>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
                 <input asp-for="Input.Email" class="form-control" />

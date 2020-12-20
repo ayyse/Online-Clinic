@@ -8,6 +8,6 @@ namespace Online_Clinic.Services.Contracts
     {
         Result<List<BağışçıVM>> GetAllBağışçı();
 
-        Result<BağışçıVM> Register(BağışçıVM bağışçı);
+        Result<BağışçıVM> Register(BağışçıVM model);
     }
 }
