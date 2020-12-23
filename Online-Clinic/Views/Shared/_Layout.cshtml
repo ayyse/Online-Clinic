@@ -96,7 +96,17 @@
                             }
                         }
                     </ul>
-                    
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        if (User.IsInRole(ResultConstant.AdminRole))
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a asp-controller="Bağışçı" asp-action="Delete" class="smoothScroll">Bağışçılar</a></li>
+                                <li><a asp-controller="Doktor" asp-action="Delete" class="smoothScroll">Doktorlar</a></li>
+                                <li><a asp-controller="Hasta" asp-action="Delete" class="smoothScroll">Hasta Hikayeleri</a></li>
+                            </ul>
+                        }
+                    }
                 </div>
             </div>
         </section>

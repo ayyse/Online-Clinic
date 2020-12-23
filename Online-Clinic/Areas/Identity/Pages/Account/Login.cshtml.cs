@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Online_Clinic.Common.SessionOperations;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DbModels;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Online_Clinic.Areas.Identity.Pages.Account
 {
@@ -23,17 +22,17 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
         private readonly UserManager<Visitor> _userManager;
         private readonly SignInManager<Visitor> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
 
         public LoginModel(SignInManager<Visitor> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<Visitor> userManager,
-            IUnitOfWork unitOfWork)
+            UserManager<Visitor> userManager
+           /* IUnitOfWork unitOfWork*/)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _unitOfWork = unitOfWork;
+            //_unitOfWork = unitOfWork;
         }
 
         [BindProperty]
@@ -91,14 +90,14 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                     var user = _userManager.FindByEmailAsync(Input.Email);
-                    if(user != null)
+                    if (user != null)
                     {
                         var sessionContext = new SessionContext();
                         sessionContext.Email = user.Result.Email;
                         sessionContext.Ad = user.Result.NormalizedUserName;
                         sessionContext.LoginID = user.Result.Id;
+                        HttpContext.Session.SetString("AppUserInfoSession", JsonConvert.SerializeObject(sessionContext));
                     }
-                    
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
