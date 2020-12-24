@@ -12,5 +12,6 @@ namespace Online_Clinic.Controllers
         {
             return View();
         }
+
     }
 }

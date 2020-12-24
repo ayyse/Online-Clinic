@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Online_Clinic.Controllers
 {
+    //[Authorize(Roles = ResultConstant.HastaRole)]
+
     public class HastaController : Controller
     {
         private readonly IHastaService _hastaService;

@@ -90,6 +90,7 @@ namespace Online_Clinic
 
             SeedData.Seed(userManager, roleManager);
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSession();

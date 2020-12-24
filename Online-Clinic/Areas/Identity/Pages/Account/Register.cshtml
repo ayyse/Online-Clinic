@@ -4,15 +4,27 @@
     ViewData["Title"] = "Kaydol";
 }
 
-@*<h2>@ViewData["Title"]</h2>*@
-<h4>Kayıt alanlarını eksiksiz doldurunuz*</h4>
+@*<body>
+        <div style="margin-top:150px; margin-bottom:50px">
+            <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Bağışçı" asp-action="Create">Bağışçı</a>
+            <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Doktor" asp-action="Create">Doktor</a>
+            <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Hasta" asp-action="Create">Hasta</a>
+        </div>
+    </body>*@
 
 
-<div class="row">
+<div class="row" style="margin-top:30px auto">
     <div class="col-md-6">
+        <h4>Kayıt olmak için alanları eksiksiz doldurunuz</h4>
+
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <hr />
+            @*<hr />*@
             <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.KullanıcıAdı"></label>
+                <input asp-for="Input.KullanıcıAdı" class="form-control" />
+                <span asp-validation-for="Input.KullanıcıAdı" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Input.Ad"></label>
                 <input asp-for="Input.Ad" class="form-control" />
@@ -28,28 +40,6 @@
                 <input asp-for="Input.DoğumTarihi" class="form-control" />
                 <span asp-validation-for="Input.DoğumTarihi" class="text-danger"></span>
             </div>
-            @*<div>
-                <label asp-for="Input.Cinsiyet">CİNSİYET</label>
-                <div class="form-check">
-                    <div>
-                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
-                        Kadın
-                    </div>
-                </div>
-                <div class="form-check">
-                    <div>
-                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Erkek
-                    </div>
-                </div>
-                <div class="form-check">
-                    <div>
-                        <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Belirtmek İstemiyorum
-                    </div>
-                </div>
-                <span asp-validation-for="Input.Cinsiyet" class="text-danger"></span>
-            </div>*@
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
                 <input asp-for="Input.Email" class="form-control" />
@@ -69,6 +59,29 @@
         </form>
     </div>
 </div>
+
+@*<div>
+    <label asp-for="Input.Cinsiyet">CİNSİYET</label>
+        <div class="form-check">
+            <div>
+                <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                Kadın
+            </div>
+        </div>
+        <div class="form-check">
+            <div>
+                <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                Erkek
+            </div>
+        </div>
+        <div class="form-check">
+            <div>
+                <input asp-for="Input.Cinsiyet" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                Belirtmek İstemiyorum
+            </div>
+        </div>
+        <span asp-validation-for="Input.Cinsiyet" class="text-danger"></span>
+    </div>*@
 @*<div class="col-md-6 col-md-offset-2">
             <section>
                 <h4>Use another service to register.</h4>

@@ -48,6 +48,10 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [Display(Name = "Kullanıcı Adı")]
+            public string KullanıcıAdı { get; set; } 
+
+            [Required]
             [Display(Name = "Ad")]
             public string Ad { get; set; }
 
@@ -94,7 +98,7 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new Visitor { 
-                    UserName = Input.Email, 
+                    UserName = Input.KullanıcıAdı, 
                     Email = Input.Email,
                     Ad = Input.Ad, 
                     Soyad = Input.Soyad,

@@ -120,6 +120,7 @@
     <None Include="wwwroot\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
     <None Include="wwwroot\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
     <None Include="wwwroot\login\js\main.js" />
+    <None Include="wwwroot\login\js\map-custom.js" />
     <None Include="wwwroot\login\vendor\animsition\js\animsition.js" />
     <None Include="wwwroot\login\vendor\animsition\js\animsition.min.js" />
     <None Include="wwwroot\login\vendor\bootstrap\css\bootstrap-grid.css.map" />

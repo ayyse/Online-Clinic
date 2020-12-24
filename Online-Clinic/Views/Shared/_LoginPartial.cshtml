@@ -5,22 +5,22 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @User.Identity.Name</b></a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button class="appointment-btn"><a asp-controller="Home" asp-action="Index">Logout</a></button>
-            </form>
-        </li>
-    </ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @User.Identity.Name</b></a>
+    </li>
+    <li class="nav-item">
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button class="appointment-btn">Çıkış Yap</button>
+        </form>
+    </li>
+</ul>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Register">Kaydol</a></li>
-        <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a></li>
-    </ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Register">Kaydol</a></li>
+    <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a></li>
+</ul>
 }
 
