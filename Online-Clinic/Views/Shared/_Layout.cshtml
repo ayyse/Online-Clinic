@@ -85,9 +85,9 @@
                     <partial name="_LoginPartial" />
                     <ul class="nav navbar-nav navbar-right">
 
-                        @if (!SignInManager.IsSignedIn(User))
+                        @if (SignInManager.IsSignedIn(User))
                         {
-                            if (User.IsInRole(ResultConstant.VisitorRole))
+                            if (User.IsInRole(ResultConstant.AdminRole))
                             {
                                 <li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>
                                 <li><a asp-controller="Bağışçı" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>

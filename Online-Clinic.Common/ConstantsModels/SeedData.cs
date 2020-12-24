@@ -17,8 +17,9 @@ namespace Online_Clinic.Common.ConstantsModels
             {
                 var user = new Visitor
                 {
-                    UserName = ResultConstant.AdminEmail,
-                    Email = ResultConstant.AdminEmail
+                    UserName = ResultConstant.AdminName,
+                    Email = ResultConstant.AdminEmail,
+                    Şifre = ResultConstant.AdminPassword
                 };
                 var result = userManager.CreateAsync(user, ResultConstant.AdminPassword).Result;
                 if (result.Succeeded)

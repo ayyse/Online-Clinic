@@ -4,9 +4,12 @@
     {
         public const string AdminRole = "Admin";
 
-        public const string AdminEmail = "ayseakisik16@gmail.com";
+        public const string AdminEmail = "admin@onlineclinic.com";
 
-        public const string AdminPassword = "Ayse123.";
+        public const string AdminPassword = "Admin123.";
+
+        public const string AdminName = "admin";
+
 
 
         public const string DoktorRole = "Doktor";
