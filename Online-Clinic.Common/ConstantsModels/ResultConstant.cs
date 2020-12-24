@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Online_Clinic.Common.ConstantsModels
+﻿namespace Online_Clinic.Common.ConstantsModels
 {
     public static class ResultConstant
     {
@@ -19,7 +15,9 @@ namespace Online_Clinic.Common.ConstantsModels
 
         public const string BağışçıRole = "Bağışçı";
 
+        public const string VisitorRole = "Visitor";
 
+        public const string LoginUserInfo = "Giriş Yapan Kullanıcı";
 
     }
 }

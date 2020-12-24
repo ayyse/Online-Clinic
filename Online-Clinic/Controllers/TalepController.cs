@@ -1,21 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Online_Clinic.Common.ConstantsModels;
+using Online_Clinic.Common.SessionOperations;
+using Online_Clinic.Services.Contracts;
 
 namespace Online_Clinic.Controllers
 {
     public class TalepController : Controller
     {
-        public IActionResult Index()
+        private readonly ITalepService _talepService;
+
+        public TalepController(ITalepService talepService)
         {
-            return View();
+            _talepService = talepService;
         }
 
-        public IActionResult Create()
+        public IActionResult Index()
         {
-            return View();
+            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+            return View(user);
         }
     }
 }

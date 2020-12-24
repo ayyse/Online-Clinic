@@ -20,7 +20,7 @@ namespace Online_Clinic.Controllers
         }
 
 
-        [Authorize(Roles = ResultConstant.DoktorRole)]
+        //[Authorize(Roles = ResultConstant.DoktorRole)]
         public IActionResult Index()
         {
             var data = _doktorService.GetAllDoktor();

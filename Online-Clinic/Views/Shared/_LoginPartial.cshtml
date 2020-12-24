@@ -1,50 +1,20 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@*@using Online_Clinic.Common.SessionOperations*@
 
 @inject SignInManager<Online_Clinic.Data.DbModels.Visitor> SignInManager
 @inject UserManager<Online_Clinic.Data.DbModels.Visitor> UserManager
-@*@if (SignInManager.IsSignedIn(User))
-    {
-        <li class="nav-item">
-            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                @await Component.InvokeAsync("UserName")
-            </a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-white">Çıkış Yap</button>
-            </form>
-        </li>
-    }
-    else
-    {
-        <ul class="nav navbar-nav navbar-right">
-            <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Register">Kaydol</a></li>
-            <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a></li>
-        </ul>
-    }*@
 
 @if (SignInManager.IsSignedIn(User))
 {
-
-    @*<li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @girisYapanKullanici.UserName!</b></a>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @User.Identity.Name</b></a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                <button class="appointment-btn"><a asp-controller="Home" asp-action="Index">Logout</a></button>
             </form>
-        </li>*@
-    <li class="nav-item">
-        <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-            @await Component.InvokeAsync("UserName")
-        </a>
-    </li>
-    <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
-        </form>
-    </li>
+        </li>
+    </ul>
 }
 else
 {

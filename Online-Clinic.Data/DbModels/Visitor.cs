@@ -12,6 +12,8 @@ namespace Online_Clinic.Data.DbModels
         public string Şifre { get; set; }
         public string Image { get; set; }
 
+        public bool IsActive { get; set; }
+        public bool IsAdmin { get; set; }
 
     }
 }

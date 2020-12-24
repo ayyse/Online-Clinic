@@ -14,6 +14,7 @@ using Online_Clinic.Data.DbModels;
 using Online_Clinic.Data.Implementation;
 using Online_Clinic.Services.Contracts;
 using Online_Clinic.Services.Implementation;
+using System;
 
 namespace Online_Clinic
 {
@@ -36,9 +37,7 @@ namespace Online_Clinic
             services.AddAutoMapper(typeof(Maps));
 
             services.AddScoped<IRandevuService, RandevuService>();
-            services.AddScoped<IDoktorService, DoktorService>();
-            services.AddScoped<IHastaService, HastaService>();
-            services.AddScoped<IBaðýþçýService, BaðýþçýService>();
+            services.AddScoped<ITalepService, TalepService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
@@ -49,10 +48,11 @@ namespace Online_Clinic
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ClinicContext>();
 
-            services.AddIdentityCore<IdentityUser>().AddEntityFrameworkStores<ClinicContext>();
-
             services.AddMvc();
-            services.AddSession();
+            services.AddSession(options => 
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(3600);
+            });
 
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
             //services.AddDbContext<AppDbContext>
