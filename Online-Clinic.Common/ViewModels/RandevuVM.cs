@@ -1,18 +1,27 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Online_Clinic.Common.ViewModels
 {
     public class RandevuVM
     {
         public string RandevuID { get; set; }
-        public string TamAd { get; set; }
-        public HastaVM DoktorVm { get; set; }
+
+        [Required]
+        public string AdSoyad { get; set; }
+        public HastaVM hastaVM { get; set; }
+
+        [Required]
         public string Bölüm { get; set; }
+
+        [Required]
         public DateTime Tarih { get; set; }
-        public DateTime Saat { get; set; }
+
+        [Required]
         public string Telefon { get; set; }
+
+        [Required]
         public string Email { get; set; }
-        public string Mesaj { get; set; }
         
     }
 }

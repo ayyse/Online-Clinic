@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Online_Clinic.Common.ConstantsModels;
 using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Services.Contracts;
 
@@ -30,6 +32,7 @@ namespace Online_Clinic.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public ActionResult Create(RandevuVM model)

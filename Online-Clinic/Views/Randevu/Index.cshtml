@@ -25,7 +25,7 @@
                 <tr>
                     <th>Ad Soyad</th>
                     <th>Tarih</th>
-                    <th>Saat</th>
+                    @*<th>Saat</th>*@
                     <th>E-mail</th>
                     <th>Telefon</th>
                 </tr>
@@ -34,11 +34,16 @@
             {
                 <tbody>
                     <tr>
-                        <td>@item.TamAd</td>
+                        <td>@item.AdSoyad</td>
                         <td>@item.Tarih</td>
-                        <td>@item.Saat</td>
+                        @*<td>@item.Saat</td>*@
                         <td>@item.Email</td>
                         <td>@item.Telefon</td>
+                        <td>
+                            @*<a asp-action="Edit" asp-route-id="@item.RandevuID">Edit</a> |*@
+                            <a asp-action="Details" asp-route-id="@item.RandevuID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.RandevuID">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
             }

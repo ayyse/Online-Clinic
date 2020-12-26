@@ -16,23 +16,21 @@
 
             <div class="col-md-6 col-sm-6">
                 <!-- CONTACT FORM HERE -->
-                <form id="appointment-form" asp-controller="Randevu" asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+                <form id="appointment-form" asp-controller="Randevu" asp-action="Create" method="post">
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" data-wow-delay="0.4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
                         <h2>Randevu Al</h2>
                     </div>
                     <div class="wow fadeInUp" data-wow-delay="0.8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+                        <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="col-md-6 col-sm-6">
-                            <label asp-for="TamAd">Tam Adınız</label>
-                            <input type="text" class="form-control" id="name" name="name">
-                            <span asp-validation-for="TamAd"></span>
+                            <label asp-for="AdSoyad">Tam Adınız</label>
+                            <input asp-for="AdSoyad" class="form-control" />
                         </div>
 
                         <div class="col-md-6 col-sm-6">
                             <label asp-for="Bölüm">Bölüm Seçiniz</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Bölüm">
                                 <option action>Seçiniz</option>
                                 <option>Beyin ve Sinir Cerrahisi</option>
                                 <option>Kalp ve Damar Cerrahisi</option>
@@ -48,33 +46,36 @@
                         </div>
 
 
-                        <div class="col-md-6 col-sm-6">
+                        @*<div class="col-md-6 col-sm-6">
                             <label asp-for="Tarih">Tarih Seçiniz</label>
-                            <input type="date" name="date" value="" class="form-control">
-                        </div>
+                            <input asp-for="Tarih" class="form-control">
+                        </div>*@
 
-                        <div class="col-md-6 col-sm-6">
+                        @*<div class="col-md-6 col-sm-6">
                             <label asp-for="Saat">Saat Seçiniz</label>
-                            <input type="time" name="time" value="" class="form-control">
-                        </div>
+                            <input asp-for="Saat" type="time" name="time" value="" class="form-control">
+                        </div>*@
 
 
 
-                        <div class="col-md-12 col-sm-12">
-                            <label asp-for="Telefon">Telefon Numaranız</label>
-                            <input type="tel" class="form-control" id="phone" name="phone">
-                            <label asp-for="Email">E-mail Adresiniz</label>
-                            <input type="email" class="form-control" id="email" name="email">
-                            <label asp-for="Mesaj">Eklemek İstediğiniz Bir Mesaj Var mı?</label>
-                            <textarea class="form-control" rows="5" id="message" name="message"></textarea>
-                            <button type="submit" class="form-control" id="cf-submit" name="submit">Randevu Al</button>
-                        </div>
+                    <div class="col-md-12 col-sm-12">
+                        <label asp-for="Tarih">Tarih Seçiniz</label>
+                        <input asp-for="Tarih" class="form-control">
+                        <label asp-for="Telefon">Telefon Numaranız</label>
+                        <input asp-for="Telefon" class="form-control">
+                        <label asp-for="Email">E-mail Adresiniz</label>
+                        <input asp-for="Email" class="form-control" />
+                        @*<label asp-for="Mesaj">Eklemek İstediğiniz Bir Mesaj Var mı?</label>
+                        <textarea asp-for="Mesaj" class="form-control"></textarea>*@
+                        <button type="submit" class="form-control" id="cf-submit" name="submit">Randevu Al</button>
                     </div>
-
+                    </div>
                 </form>
             </div>
 
         </div>
     </div>
 </section>
-
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

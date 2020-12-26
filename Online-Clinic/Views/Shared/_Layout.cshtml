@@ -84,7 +84,9 @@
                 <div class="collapse navbar-collapse">
                     <partial name="_LoginPartial" />
                     <ul class="nav navbar-nav navbar-right">
-
+                        <li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>
+                        <li><a asp-controller="Randevu" asp-action="Create" class="smoothScroll">Randevu Al</a></li>
+                        <li><a asp-controller="Randevu" asp-action="Index" class="smoothScroll">Randevularım</a></li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             if (User.IsInRole(ResultConstant.AdminRole))

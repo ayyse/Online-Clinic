@@ -39,6 +39,7 @@ namespace Online_Clinic
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<ITalepService, TalepService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IDoktorService, DoktorService>();
 
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
