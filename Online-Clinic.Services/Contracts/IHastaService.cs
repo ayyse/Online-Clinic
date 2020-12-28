@@ -10,6 +10,6 @@ namespace Online_Clinic.Services.Contracts
     {
         Result<List<HastaVM>> GetAllHasta();
 
-        Result<HastaVM> Register(HastaVM hasta);
+        Result<HastaVM> Register(HastaVM model);
     }
 }

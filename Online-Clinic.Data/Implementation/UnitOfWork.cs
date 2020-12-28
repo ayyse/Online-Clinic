@@ -10,17 +10,21 @@ namespace Online_Clinic.Data.Implementation
         public UnitOfWork(ClinicContext ctx)
         {
             _ctx = ctx;
-            bağışTalebi = new BağışTalebiRepository(_ctx);
+            bağışTalebiRepository = new BağışTalebiRepository(_ctx);
             randevuRepository = new RandevuRepository(_ctx);
             visitorRepository = new VisitorRepository(_ctx);
             doktorRepository = new DoktorRepository(_ctx);
-
+            hastaRepository = new HastaRepository(_ctx);
+            bağışçıRepository = new BağışçıRepository(_ctx);
         }
 
-        public IBağışTalebiRepository bağışTalebi { get; private set; }
+        public IBağışTalebiRepository bağışTalebiRepository { get; private set; }
         public IRandevuRepository randevuRepository { get; private set; }
         public IVisitorRepository visitorRepository { get; private set; }
         public IDoktorRepository doktorRepository { get; private set; }
+        public IBağışçıRepository bağışçıRepository { get; private set; }
+        public IHastaRepository hastaRepository { get; private set; }
+
 
 
         public void Save()

@@ -2,11 +2,13 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Online_Clinic.Common.ConstantsModels;
+using Online_Clinic.Common.EmailOperationModels;
 using Online_Clinic.Common.Mappings;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DataContext;
@@ -36,10 +38,17 @@ namespace Online_Clinic
 
             services.AddAutoMapper(typeof(Maps));
 
+            //services.AddSingleton<IEmailSender, EmailSender>();
+            //services.Configure<EmailOptions>(Configuration);
+
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<ITalepService, TalepService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDoktorService, DoktorService>();
+            services.AddScoped<IHastaService, HastaService>();
+            services.AddScoped<IBaðýþçýService, BaðýþçýService>();
+
+
 
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
@@ -95,7 +104,7 @@ namespace Online_Clinic
             app.UseAuthorization();
 
             app.UseSession();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

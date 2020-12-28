@@ -1,82 +1,50 @@
-﻿@{
+﻿@model System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.BağışçıVM>
+
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<section id="team" data-stellar-background-ratio="1" style="background-position: 0px 0px;">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+<section class="container mt-4 mb-4">
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-6 col-sm-6">
-                <div class="about-info">
-                    <h2 class="wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Our Doctors</h2>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image1.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Nate Baston</h3>
-                        <p>General Principal</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-020-0120</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-linkedin-square"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
-                        </ul>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="d-flex flex-row border rounded">
+                    <div class="p-0 w-25">
                     </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image2.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Jason Stewart</h3>
-                        <p>Pregnancy</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-070-0170</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-facebook-square"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
-                            <li><a href="#" class="fa fa-flickr"></a></li>
+                    <div class="d-flex flex-row border rounded" style="border:1px">
+                        <h4 class="text-primary">Leanne Boulton</h4>
+                        <h5 class="text-info">Photographer</h5>
+                        <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+                            <li><i class="fab fa-facebook-square"></i> Facebook</li>
+                            <li><i class="fab fa-twitter-square"></i> Twitter</li>
                         </ul>
+                        <p class="text-right m-0"><a href="#" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
                     </div>
-
                 </div>
             </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image3.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Miasha Nakahara</h3>
-                        <p>Cardiology</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-040-0140</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
+            <div class="col-md-6">
+                <div class="d-flex flex-row border rounded">
+                    <div class="p-0 w-25">
+                    </div>
+                    <div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+                        <h4 class="text-primary">Leanne Boulton</h4>
+                        <h5 class="text-info">Photographer</h5>
+                        <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+                            <li><i class="fab fa-facebook-square"></i> Facebook</li>
+                            <li><i class="fab fa-twitter-square"></i> Twitter</li>
                         </ul>
+                        <p class="text-right m-0"><a href="#" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
                     </div>
-
                 </div>
             </div>
-
         </div>
+
     </div>
 </section>
+

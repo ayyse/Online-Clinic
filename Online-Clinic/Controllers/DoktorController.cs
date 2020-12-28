@@ -1,12 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Online_Clinic.Common.ConstantsModels;
-using Online_Clinic.Common.ViewModels;
+﻿using Microsoft.AspNetCore.Mvc;
 using Online_Clinic.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Online_Clinic.Controllers
 {
@@ -15,44 +8,26 @@ namespace Online_Clinic.Controllers
         private readonly IDoktorService _doktorService;
 
         public DoktorController(IDoktorService doktorService)
-        {
+        { 
             _doktorService = doktorService;
         }
 
+        //public async Task<IActionResult> Index()
+        //{
+        //    var doktor = _userManager.Users.ToListAsync(); 
+        //    return View(doktor);
+        //}
 
-        //[Authorize(Roles = ResultConstant.DoktorRole)]
         public IActionResult Index()
         {
-            var data = _doktorService.GetAllDoktor();
-            if (data.IsSuccess)
+            var doktor = _doktorService.GetAllDoktor();
+            if (doktor.IsSuccess)
             {
-                var result = data.Data;
+                var result = doktor.Data;
                 return View(result);
             }
-            return View(data);
+            return View(doktor);
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Register(DoktorVM model)
-        {
-            if (ModelState.IsValid)
-            {
-                var data = _doktorService.Register(model);
-                if (data.IsSuccess)
-                {
-                    return RedirectToAction("Index");
-                }
-                return View(model);
-            }
-            else
-            {
-                return View(model);
-            }
-        }
     }
 }

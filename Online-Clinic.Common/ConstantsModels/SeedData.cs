@@ -31,6 +31,12 @@ namespace Online_Clinic.Common.ConstantsModels
 
         private static void SeedRoles(RoleManager<IdentityRole> roleManager)
         {
+
+            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.AdminRole });
+            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.DoktorRole });
+            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.BağışçıRole });
+            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.HastaRole });
+
             if (!roleManager.RoleExistsAsync(ResultConstant.AdminRole).Result)
             {
                 var role = new IdentityRole

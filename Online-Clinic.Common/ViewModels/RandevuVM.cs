@@ -5,7 +5,7 @@ namespace Online_Clinic.Common.ViewModels
 {
     public class RandevuVM
     {
-        public string RandevuID { get; set; }
+        public int RandevuID { get; set; }
 
         [Required]
         public string AdSoyad { get; set; }
@@ -22,6 +22,15 @@ namespace Online_Clinic.Common.ViewModels
 
         [Required]
         public string Email { get; set; }
-        
+
+        public void SetRandevu(string adSoyad, string bölüm, string tel, string mail, DateTime tarih)
+        {
+            this.AdSoyad = adSoyad;
+            this.Bölüm = bölüm;
+            this.Telefon = tel;
+            this.Email = mail;
+            this.Tarih = tarih;
+        }
+
     }
 }

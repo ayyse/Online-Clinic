@@ -7,7 +7,7 @@ namespace Online_Clinic.Data.DbModels
     public class Randevu
     {
         [Key]
-        public string RandevuID { get; set; }
+        public int RandevuID { get; set; }
         public string AdSoyad { get; set; }
         public string Bölüm { get; set; }
         public string Telefon { get; set; }

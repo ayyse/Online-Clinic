@@ -52,7 +52,7 @@
 
             <div class="col-md-6 col-sm-6">
                 <div class="about-info">
-                    <h2 class="wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Our Doctors</h2>
+                    <h2 class="wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Doktorlarımız</h2>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                     <img src="~/HomeIndex/images/team-image1.jpg" class="img-responsive" alt="">
 
                     <div class="team-info">
-                        <h3>Nate Baston</h3>
+                        <label></label>
                         <p>General Principal</p>
                         <div class="team-contact-info">
                             <p><i class="fa fa-phone"></i> 010-020-0120</p>
@@ -83,7 +83,7 @@
                     <img src="~/HomeIndex/images/team-image2.jpg" class="img-responsive" alt="">
 
                     <div class="team-info">
-                        <h3>Jason Stewart</h3>
+                        <h3></h3>
                         <p>Pregnancy</p>
                         <div class="team-contact-info">
                             <p><i class="fa fa-phone"></i> 010-070-0170</p>
@@ -244,10 +244,10 @@
                         </div>
 
 
-                        <div class="col-md-6 col-sm-6">
+                        @*<div class="col-md-6 col-sm-6">
                             <label asp-for="Tarih">Tarih Seçiniz</label>
                             <input asp-for="Tarih" type="date" class="form-control">
-                        </div>
+                        </div>*@
 
                         @*<div class="col-md-6 col-sm-6">
                             <label asp-for="Saat">Saat Seçiniz</label>
@@ -256,15 +256,17 @@
 
 
 
-                        <div class="col-md-12 col-sm-12">
-                            <label asp-for="Telefon">Telefon Numaranız</label>
-                            <input asp-for="Telefon" class="form-control">
-                            <label asp-for="Email">E-mail Adresiniz</label>
-                            <input asp-for="Email" class="form-control" />
-                            @*<label asp-for="Mesaj">Eklemek İstediğiniz Bir Mesaj Var mı?</label>
-                                <textarea asp-for="Mesaj" class="form-control"></textarea>*@
-                            <button type="submit" class="form-control" id="cf-submit" name="submit">Randevu Al</button>
-                        </div>
+                    <div class="col-md-12 col-sm-12">
+                        <label asp-for="Tarih">Tarih Seçiniz</label>
+                        <input asp-for="Tarih" type="date" class="form-control">
+                        <label asp-for="Telefon">Telefon Numaranız</label>
+                        <input asp-for="Telefon" class="form-control">
+                        <label asp-for="Email">E-mail Adresiniz</label>
+                        <input asp-for="Email" class="form-control" />
+                        @*<label asp-for="Mesaj">Eklemek İstediğiniz Bir Mesaj Var mı?</label>
+        <textarea asp-for="Mesaj" class="form-control"></textarea>*@
+                        <button type="submit" class="form-control" id="cf-submit" name="submit">Randevu Al</button>
+                    </div>
                     </div>
                 </form>
             </div>

@@ -16,5 +16,7 @@ namespace Online_Clinic.Common.ViewModels
         public string Adres { get; set; }
         public string Kurum { get; set; }
         public bool IsSuccess { get; set; }
+        public string Role { get; set; }
+
     }
 }

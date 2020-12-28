@@ -1,82 +1,49 @@
-﻿@{
+﻿@model System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.HastaVM>
+
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<section id="team" data-stellar-background-ratio="1" style="background-position: 0px 0px;">
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-6 col-sm-6">
-                <div class="about-info">
-                    <h2 class="wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Our Doctors</h2>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image1.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Nate Baston</h3>
-                        <p>General Principal</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-020-0120</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-linkedin-square"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image2.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Jason Stewart</h3>
-                        <p>Pregnancy</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-070-0170</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-facebook-square"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
-                            <li><a href="#" class="fa fa-flickr"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="team-thumb wow fadeInUp animated" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <img src="~/HomeIndex/images/team-image3.jpg" class="img-responsive" alt="">
-
-                    <div class="team-info">
-                        <h3>Miasha Nakahara</h3>
-                        <p>Cardiology</p>
-                        <div class="team-contact-info">
-                            <p><i class="fa fa-phone"></i> 010-040-0140</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
-                        </div>
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-envelope-o"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
+        <h2>Hasta Listesi</h2>
+        <p>@DateTime.Now</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.Ad</td>
+                        <td>@item.Soyad</td>
+                        <td>@item.Email</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.HastaID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.HastaID">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
     </div>
-</section>
+
+</body>
+</html>

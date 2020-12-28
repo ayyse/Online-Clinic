@@ -1,4 +1,4 @@
-﻿@model Online_Clinic.Data.DbModels.BağışTalebi
+﻿@model Online_Clinic.Common.ViewModels.BağışTalebiVM
 
 @{
     ViewData["Title"] = "Create";
@@ -11,15 +11,20 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form class="form-horizontal" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TalepID" class="control-label"></label>
-                <input asp-for="TalepID" class="form-control" />
-                <span asp-validation-for="TalepID" class="text-danger"></span>
+                <label asp-for="Hasta.Ad" class="control-label"></label>
+                <input asp-for="Hasta.Ad" class="form-control" />
+                <span asp-validation-for="Hasta.Ad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TalepTarihi" class="control-label"></label>
+                <label asp-for="Hasta.Soyad" class="control-label"></label>
+                <input asp-for="Hasta.Soyad" class="form-control" />
+                <span asp-validation-for="Hasta.Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TalepTarihi" class="control-label">Talep Tarihi</label>
                 <input asp-for="TalepTarihi" class="form-control" />
                 <span asp-validation-for="TalepTarihi" class="text-danger"></span>
             </div>
@@ -28,13 +33,13 @@
                 <input asp-for="TalepAçıklaması" class="form-control" />
                 <span asp-validation-for="TalepAçıklaması" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="Onay" /> @Html.DisplayNameFor(model => model.Onay)
-                    </label>
-                </div>
+            @*<div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input asp-for="Onay" /> @Html.DisplayNameFor(model => model.Onay)
+                </label>
             </div>
+        </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>

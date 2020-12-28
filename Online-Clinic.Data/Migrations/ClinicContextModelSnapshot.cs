@@ -223,7 +223,15 @@ namespace Online_Clinic.Data.Migrations
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.BağışTalebi", b =>
                 {
-                    b.Property<string>("TalepID")
+                    b.Property<int>("TalepID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AdminID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("HastaID")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("Onay")
@@ -235,15 +243,24 @@ namespace Online_Clinic.Data.Migrations
                     b.Property<DateTime>("TalepTarihi")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("İptal")
+                        .HasColumnType("bit");
+
                     b.HasKey("TalepID");
+
+                    b.HasIndex("AdminID");
+
+                    b.HasIndex("HastaID");
 
                     b.ToTable("BağışTalepleri");
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
                 {
-                    b.Property<string>("RandevuID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("RandevuID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AdSoyad")
                         .HasColumnType("nvarchar(max)");
@@ -259,12 +276,6 @@ namespace Online_Clinic.Data.Migrations
 
                     b.Property<string>("HastaID")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Mesaj")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Saat")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Tarih")
                         .HasColumnType("datetime2");
@@ -313,6 +324,13 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Visitor");
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Admin", b =>
+                {
+                    b.HasBaseType("Online_Clinic.Data.DbModels.Visitor");
+
+                    b.HasDiscriminator().HasValue("Admin");
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Bağışçı", b =>
@@ -421,6 +439,17 @@ namespace Online_Clinic.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.BağışTalebi", b =>
+                {
+                    b.HasOne("Online_Clinic.Data.DbModels.Admin", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminID");
+
+                    b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
+                        .WithMany()
+                        .HasForeignKey("HastaID");
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>

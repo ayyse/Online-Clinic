@@ -25,7 +25,6 @@ namespace Online_Clinic.Services.Implementation
         public Result<List<RandevuVM>> GetAllRandevu()
         {
             var data = _unitOfWork.randevuRepository.GetAll().ToList();
-
             var randevular = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
             return new Result<List<RandevuVM>>(true, "Başarılı", randevular);
 
@@ -38,7 +37,7 @@ namespace Online_Clinic.Services.Implementation
                 try
                 {
                     var randevu = _mapper.Map<RandevuVM, Randevu>(model);
-                    randevu.Tarih = DateTime.Now;
+                    //randevu.Tarih = DateTime.Now;
                     _unitOfWork.randevuRepository.Add(randevu);
                     _unitOfWork.Save();
                     return new Result<RandevuVM>(true, "Randevu işleminiz başarılı.");
