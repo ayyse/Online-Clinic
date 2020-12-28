@@ -6,6 +6,8 @@
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string Email { get; set; }
+        public string UserName { get; set; }
+
         public bool? IsAdmin { get; set; }
     }
 }
