@@ -85,21 +85,15 @@
                     <partial name="_LoginPartial" />
                     <div>
                         <ul class="nav navbar-nav navbar-right">
-                            @*<li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>*@
-                            <li><a asp-controller="Randevu" asp-action="Create" class="smoothScroll">Randevu Al</a></li>
-                            <li><a asp-controller="Randevu" asp-action="Index" class="smoothScroll">Randevularım</a></li>
-                            <li><a asp-controller="Talep" asp-action="Create" class="smoothScroll">Bağış Talebi Oluştur</a></li>
-                            <li><a asp-controller="Talep" asp-action="Index" class="smoothScroll">Bağış Talepleri</a></li>
-                            <li><a asp-controller="Bağışçı" asp-action="Index1" class="smoothScroll">Bağışçılar</a></li>
-                            <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
-                            <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
+                            @*<li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>
+                            <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>*@
                             @if (SignInManager.IsSignedIn(User))
                             {
                                 if (User.IsInRole(ResultConstant.AdminRole))
                                 {
                                     <li><a asp-controller="Bağışçı" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>
                                     <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
-                                    <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
+                                    <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hastalar</a></li>
                                 }
                             }
                             @if (!SignInManager.IsSignedIn(User))
