@@ -122,18 +122,17 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                     //_userManager.AddToRoleAsync(user, ResultConstant.BağışçıRole).Wait();
 
 
-
                     if (user.Role == ResultConstant.DoktorRole)
                     {
-                        _userManager.AddToRoleAsync(user, ResultConstant.DoktorRole).Wait();
+                        await _userManager.AddToRoleAsync(user, ResultConstant.DoktorRole);
                     }
                     if (user.Role == ResultConstant.HastaRole)
                     {
-                        _userManager.AddToRoleAsync(user, ResultConstant.HastaRole).Wait();
+                        await _userManager.AddToRoleAsync(user, ResultConstant.HastaRole);
                     }
                     if (user.Role == ResultConstant.BağışçıRole)
                     {
-                        _userManager.AddToRoleAsync(user, ResultConstant.BağışçıRole).Wait();
+                        await _userManager.AddToRoleAsync(user, ResultConstant.BağışçıRole);
                     }
 
 

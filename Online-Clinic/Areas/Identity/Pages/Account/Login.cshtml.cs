@@ -92,13 +92,15 @@ namespace Online_Clinic.Areas.Identity.Pages.Account
                 {
                     var user = _unitOfWork.visitorRepository.GetFirstorDefault(u => u.UserName == Input.UserName.ToLower());
 
+
                     var userInfo = new SessionContext()
                     {
                         UserName = user.UserName,
                         Ad = user.Ad,
                         IsAdmin = false,
                         Soyad = user.Soyad,
-                        LoginID = user.Id
+                        LoginID = user.Id,
+                        Role = user.Role
                     };
 
                     //Set To User ınfo Session
