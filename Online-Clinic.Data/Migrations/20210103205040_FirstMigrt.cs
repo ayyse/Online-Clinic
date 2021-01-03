@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Online_Clinic.Data.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class FirstMigrt : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -65,6 +65,39 @@ namespace Online_Clinic.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BağışTalepleri",
+                columns: table => new
+                {
+                    TalepID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TalepTarihi = table.Column<DateTime>(nullable: false),
+                    TalepAçıklaması = table.Column<string>(nullable: true),
+                    Onay = table.Column<bool>(nullable: false),
+                    İptal = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BağışTalepleri", x => x.TalepID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Randevular",
+                columns: table => new
+                {
+                    RandevuID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AdSoyad = table.Column<string>(nullable: true),
+                    Bölüm = table.Column<string>(nullable: true),
+                    Telefon = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Tarih = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Randevular", x => x.RandevuID);
                 });
 
             migrationBuilder.CreateTable(
@@ -173,67 +206,6 @@ namespace Online_Clinic.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "BağışTalepleri",
-                columns: table => new
-                {
-                    TalepID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TalepTarihi = table.Column<DateTime>(nullable: false),
-                    TalepAçıklaması = table.Column<string>(nullable: true),
-                    Onay = table.Column<bool>(nullable: false),
-                    İptal = table.Column<bool>(nullable: false),
-                    HastaID = table.Column<string>(nullable: true),
-                    AdminID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BağışTalepleri", x => x.TalepID);
-                    table.ForeignKey(
-                        name: "FK_BağışTalepleri_AspNetUsers_AdminID",
-                        column: x => x.AdminID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_BağışTalepleri_AspNetUsers_HastaID",
-                        column: x => x.HastaID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Randevular",
-                columns: table => new
-                {
-                    RandevuID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    AdSoyad = table.Column<string>(nullable: true),
-                    Bölüm = table.Column<string>(nullable: true),
-                    Telefon = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Tarih = table.Column<DateTime>(nullable: false),
-                    HastaID = table.Column<string>(nullable: true),
-                    DoktorID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Randevular", x => x.RandevuID);
-                    table.ForeignKey(
-                        name: "FK_Randevular_AspNetUsers_DoktorID",
-                        column: x => x.DoktorID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Randevular_AspNetUsers_HastaID",
-                        column: x => x.HastaID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -272,26 +244,6 @@ namespace Online_Clinic.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BağışTalepleri_AdminID",
-                table: "BağışTalepleri",
-                column: "AdminID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BağışTalepleri_HastaID",
-                table: "BağışTalepleri",
-                column: "HastaID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Randevular_DoktorID",
-                table: "Randevular",
-                column: "DoktorID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Randevular_HastaID",
-                table: "Randevular",
-                column: "HastaID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

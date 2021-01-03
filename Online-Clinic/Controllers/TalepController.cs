@@ -19,27 +19,27 @@ namespace Online_Clinic.Controllers
 
         public IActionResult Index()
         {
-            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
-            var requestModel = _talepService.GetAllTalepByUserId(user.LoginID);
-            if (requestModel.IsSuccess)
+            var data = _talepService.GetAllTalep();
+            if (data.IsSuccess)
             {
-                return View(requestModel.Data);
+                var result = data.Data;
+                return View(result);
             }
-            return View(user);
+            return View(data);
         }
+
         public IActionResult Create()
         {
             return View();
         }
 
+
         [HttpPost]
         public ActionResult Create(BağışTalebiVM model)
         {
-            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
-
             if (ModelState.IsValid)
             {
-                var data = _talepService.CreateBağışTalebi(model, user);
+                var data = _talepService.CreateTalep(model);
                 if (data.IsSuccess)
                 {
                     return RedirectToAction("Index");
@@ -51,6 +51,49 @@ namespace Online_Clinic.Controllers
                 return View(model);
             }
         }
+
+
+
+
+
+
+
+
+
+        //public IActionResult Index()
+        //{
+        //    var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+        //    var requestModel = _talepService.GetAllTalepByUserId(user.LoginID);
+        //    if (requestModel.IsSuccess)
+        //    {
+        //        return View(requestModel.Data);
+        //    }
+        //    return View(user);
+        //}
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult Create(BağışTalebiVM model)
+        //{
+        //    var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        var data = _talepService.CreateBağışTalebi(model, user);
+        //        if (data.IsSuccess)
+        //        {
+        //            return RedirectToAction("Index");
+        //        }
+        //        return View(model);
+        //    }
+        //    else
+        //    {
+        //        return View(model);
+        //    }
+        //}
 
 
     }

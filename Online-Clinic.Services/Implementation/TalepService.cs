@@ -23,55 +23,86 @@ namespace Online_Clinic.Services.Implementation
         }
 
 
-        public Result<List<BağışTalebiVM>> GetAllTalepByUserId(string userId)
-        {
-            var data = _unitOfWork.bağışTalebiRepository.GetAll(u => u.HastaID == userId, includeProperties:"Hasta").ToList();
 
-            if (data != null)
-            {
-                List<BağışTalebiVM> returnData = new List<BağışTalebiVM>();
-                foreach (var item in data)
-                {
-                    returnData.Add(new BağışTalebiVM()
-                    {
-                        TalepID = item.TalepID,
-                        Onay = item.Onay,
-                        İptal = item.İptal,
-                        HastaID = item.HastaID,
-                        TalepTarihi = item.TalepTarihi,
-                        AdminID = item.AdminID,
-                        TalepAçıklaması = item.TalepAçıklaması
-                    });
-                }
-                return new Result<List<BağışTalebiVM>>(true, "Başarılı", returnData);
-            }
-            else
-                return new Result<List<BağışTalebiVM>>(false, "Başarısız.");
+        public Result<List<BağışTalebiVM>> GetAllTalep()
+        {
+            var data = _unitOfWork.bağışTalebiRepository.GetAll().ToList();
+            var randevular = _mapper.Map<List<BağışTalebi>, List<BağışTalebiVM>>(data);
+            return new Result<List<BağışTalebiVM>>(true, "Başarılı", randevular);
+
         }
 
-
-        public Result<BağışTalebiVM> CreateBağışTalebi(BağışTalebiVM model, SessionContext user)
+        public Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model)
         {
             if (model != null)
             {
                 try
                 {
                     var talep = _mapper.Map<BağışTalebiVM, BağışTalebi>(model);
-                    talep.HastaID = user.LoginID;
-                    talep.İptal = false;
                     talep.TalepTarihi = DateTime.Now;
-          
+                    talep.TalepAçıklaması = model.TalepAçıklaması;
                     _unitOfWork.bağışTalebiRepository.Add(talep);
                     _unitOfWork.Save();
-                    return new Result<BağışTalebiVM>(true, "Talep işleminiz başarılı.");
+                    return new Result<BağışTalebiVM>(true, "Randevu işleminiz başarılı.");
                 }
                 catch (Exception ex)
                 {
-                    return new Result<BağışTalebiVM>(false, "Talep oluşturulurken bir hata oluştu." + ex.Message.ToString());
+                    return new Result<BağışTalebiVM>(false, "Randevu oluşturulurken bir hata oluştu." + ex.Message.ToString());
                 }
             }
             else
                 return new Result<BağışTalebiVM>(false, "Boş Olamaz");
         }
+
+        //public Result<List<BağışTalebiVM>> GetAllTalepByUserId(string userId)
+        //{
+        //    var data = _unitOfWork.bağışTalebiRepository.GetAll(u => u.HastaID == userId, includeProperties:"Hasta").ToList();
+
+        //    if (data != null)
+        //    {
+        //        List<BağışTalebiVM> returnData = new List<BağışTalebiVM>();
+        //        foreach (var item in data)
+        //        {
+        //            returnData.Add(new BağışTalebiVM()
+        //            {
+        //                TalepID = item.TalepID,
+        //                Onay = item.Onay,
+        //                İptal = item.İptal,
+        //                //HastaID = item.HastaID,
+        //                TalepTarihi = item.TalepTarihi,
+        //                //AdminID = item.AdminID,
+        //                TalepAçıklaması = item.TalepAçıklaması
+        //            });
+        //        }
+        //        return new Result<List<BağışTalebiVM>>(true, "Başarılı", returnData);
+        //    }
+        //    else
+        //        return new Result<List<BağışTalebiVM>>(false, "Başarısız.");
+        //}
+
+
+        //public Result<BağışTalebiVM> CreateBağışTalebi(BağışTalebiVM model, SessionContext user)
+        //{
+        //    if (model != null)
+        //    {
+        //        try
+        //        {
+        //            var talep = _mapper.Map<BağışTalebiVM, BağışTalebi>(model);
+        //            //talep.HastaID = user.LoginID;
+        //            talep.İptal = false;
+        //            talep.TalepTarihi = DateTime.Now;
+
+        //            _unitOfWork.bağışTalebiRepository.Add(talep);
+        //            _unitOfWork.Save();
+        //            return new Result<BağışTalebiVM>(true, "Talep işleminiz başarılı.");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return new Result<BağışTalebiVM>(false, "Talep oluşturulurken bir hata oluştu." + ex.Message.ToString());
+        //        }
+        //    }
+        //    else
+        //        return new Result<BağışTalebiVM>(false, "Boş Olamaz");
+        //}
     }
 }

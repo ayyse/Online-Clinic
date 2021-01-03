@@ -1,7 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
 
+
 @inject SignInManager<Online_Clinic.Data.DbModels.Visitor> SignInManager
+
 @inject UserManager<Online_Clinic.Data.DbModels.Visitor> UserManager
+
+@*@model Microsoft.AspNetCore.Mvc.Razor.RazorPage<Online_Clinic.Common.ViewModels.VisitorVM>*@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,22 +92,35 @@
                             @*<li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>*@
                             @if (SignInManager.IsSignedIn(User))
                             {
-                                if (User.IsInRole(ResultConstant.AdminRole))
+                                @if (User.IsInRole(ResultConstant.AdminRole))
                                 {
                                     <li><a asp-controller="Bağışçı" asp-action="Index" class="smoothScroll">Bağışçılar</a></li>
                                     <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
                                     <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hastalar</a></li>
                                     <li><a asp-controller="Talep" asp-action="Index" class="smoothScroll">Bağış Talepleri</a></li>
                                 }
-                                if (User.IsInRole(ResultConstant.DoktorRole))
+                                <!--else
+        {
+            <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
+            <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
+            <li><a asp-controller="Randevu" asp-action="Create" class="smoothScroll">Randevu Al</a></li>
+            <li><a asp-controller="Randevu" asp-action="Index" class="smoothScroll">Randevular</a></li>
+            <li><a asp-controller="Talep" asp-action="Create" class="smoothScroll">Bağış Talebi</a></li>-->
+                                @*<li><a asp-controller="Talep" asp-action="Create" class="smoothScroll">Bağış Yap</a></li>*@
+                                <!--<li><a asp-controller="Talep" asp-action="Index" class="smoothScroll">Bağış Talepleri</a></li>
+        }-->
+
+
+
+
+                                @if (User.IsInRole(ResultConstant.DoktorRole))
                                 {
                                     <li><a asp-controller="Randevu" asp-action="Index" class="smoothScroll">Randevular</a></li>
                                     <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
-
-
                                 }
 
-                                if (User.IsInRole(ResultConstant.HastaRole))
+
+                                @if (User.IsInRole(ResultConstant.HastaRole))
                                 {
                                     <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
                                     <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
@@ -112,13 +129,13 @@
 
                                 }
 
-                                if (User.IsInRole(ResultConstant.BağışçıRole))
+                                @if (User.IsInRole(ResultConstant.BağışçıRole))
                                 {
                                     <li><a asp-controller="Doktor" asp-action="Index" class="smoothScroll">Doktorlar</a></li>
-
                                     <li><a asp-controller="Hasta" asp-action="Index" class="smoothScroll">Hasta Hikayeleri</a></li>
                                     <li><a asp-controller="Talep" asp-action="Create" class="smoothScroll">Bağış Yap</a></li>
                                 }
+
                             }
                         </ul>
                     </div>

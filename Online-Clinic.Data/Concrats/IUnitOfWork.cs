@@ -13,7 +13,6 @@ namespace Online_Clinic.Data.Concrats
         IHastaRepository hastaRepository { get; }
 
 
-
         void Save();
     }
 }

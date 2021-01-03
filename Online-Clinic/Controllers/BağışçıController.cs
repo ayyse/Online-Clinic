@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Online_Clinic.Common.ConstantsModels;
 using Online_Clinic.Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,8 @@ namespace Online_Clinic.Controllers
             _bağışçıService = bağışçıService;
         }
 
+
+        [Authorize(Roles = ResultConstant.AdminRole)]
         public IActionResult Index()
         {
             var bağışçı = _bağışçıService.GetAllBağışçı();
