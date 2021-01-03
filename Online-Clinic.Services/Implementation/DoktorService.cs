@@ -28,24 +28,24 @@ namespace Online_Clinic.Services.Implementation
             return new Result<List<DoktorVM>>(true, "Başarılı", doktorlar);
         }
 
-        public Result<DoktorVM> Register(DoktorVM model)
-        {
-            if (model != null)
-            {
-                try
-                {
-                    var doktor = _mapper.Map<DoktorVM, Doktor>(model);
-                    _unitOfWork.doktorRepository.Add(doktor);
-                    _unitOfWork.Save();
-                    return new Result<DoktorVM>(true, "Kaydınız başarılı.");
-                }
-                catch (Exception ex)
-                {
-                    return new Result<DoktorVM>(false, "Kayıt olurken bir hata oluştu." + ex.Message.ToString());
-                }
-            }
-            else
-                return new Result<DoktorVM>(false, "Boş Olamaz");
-        }
+        //public Result<DoktorVM> Register(DoktorVM model)
+        //{
+        //    if (model != null)
+        //    {
+        //        try
+        //        {
+        //            var doktor = _mapper.Map<DoktorVM, Doktor>(model);
+        //            _unitOfWork.doktorRepository.Add(doktor);
+        //            _unitOfWork.Save();
+        //            return new Result<DoktorVM>(true, "Kaydınız başarılı.");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return new Result<DoktorVM>(false, "Kayıt olurken bir hata oluştu." + ex.Message.ToString());
+        //        }
+        //    }
+        //    else
+        //        return new Result<DoktorVM>(false, "Boş Olamaz");
+        //}
     }
 }

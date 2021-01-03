@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Online_Clinic.Data.DbModels
 {
@@ -8,6 +7,7 @@ namespace Online_Clinic.Data.DbModels
     {
         [Key]
         public int TalepID { get; set; }
+        public string AdSoyad { get; set; }
         public DateTime TalepTarihi { get; set; }
         public string TalepAçıklaması { get; set; }
         public bool Onay { get; set; }
