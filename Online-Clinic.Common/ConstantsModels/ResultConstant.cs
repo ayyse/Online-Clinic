@@ -3,11 +3,8 @@
     public static class ResultConstant
     {
         public const string AdminRole = "Admin";
-
         public const string AdminEmail = "admin@onlineclinic.com";
-
         public const string AdminPassword = "Admin123.";
-
         public const string AdminName = "admin";
 
 

@@ -1,0 +1,50 @@
+﻿@model Online_Clinic.Common.ViewModels.HikayeVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>Hikayeni Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form class="form-horizontal" asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ad" class="control-label">Ad</label>
+                <input asp-for="Ad" class="form-control" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soyad" class="control-label">Soyad</label>
+                <input asp-for="Soyad" class="form-control" />
+                <span asp-validation-for="Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HastalıkGeçmişi" class="control-label">Hastalık Geçmişi</label>
+                <input asp-for="HastalıkGeçmişi" class="form-control" />
+                <span asp-validation-for="HastalıkGeçmişi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KronikHastalıklar" class="control-label">Kronik Hastalık(lar)</label>
+                <input asp-for="KronikHastalıklar" class="form-control" />
+                <span asp-validation-for="KronikHastalıklar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TedaviEdenDoktor" class="control-label">Tedavi Eden Doktor(lar)</label>
+                <input asp-for="TedaviEdenDoktor" class="form-control" />
+                <span asp-validation-for="TedaviEdenDoktor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Gönder" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -2,7 +2,7 @@
 
 namespace Online_Clinic.Data.Concrats
 {
-    public interface IRandevuRepository : IRepositoryBase<Randevu>
+    public interface IHikayeRepository : IRepositoryBase<Hikaye>
     {
     }
 }

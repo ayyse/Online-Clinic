@@ -248,6 +248,33 @@ namespace Online_Clinic.Data.Migrations
                     b.ToTable("BağışTalepleri");
                 });
 
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Hikaye", b =>
+                {
+                    b.Property<int>("HikayeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HastalıkGeçmişi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KronikHastalıklar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Soyad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TedaviEdenDoktor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("HikayeID");
+
+                    b.ToTable("Hikayeler");
+                });
+
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
                 {
                     b.Property<int>("RandevuID")

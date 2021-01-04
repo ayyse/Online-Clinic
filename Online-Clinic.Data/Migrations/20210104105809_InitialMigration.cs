@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Online_Clinic.Data.Migrations
 {
-    public partial class FirstMigrt : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -73,6 +73,7 @@ namespace Online_Clinic.Data.Migrations
                 {
                     TalepID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    AdSoyad = table.Column<string>(nullable: true),
                     TalepTarihi = table.Column<DateTime>(nullable: false),
                     TalepAçıklaması = table.Column<string>(nullable: true),
                     Onay = table.Column<bool>(nullable: false),
@@ -81,6 +82,23 @@ namespace Online_Clinic.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BağışTalepleri", x => x.TalepID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Hikayeler",
+                columns: table => new
+                {
+                    HikayeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ad = table.Column<string>(nullable: true),
+                    Soyad = table.Column<string>(nullable: true),
+                    HastalıkGeçmişi = table.Column<string>(nullable: true),
+                    KronikHastalıklar = table.Column<string>(nullable: true),
+                    TedaviEdenDoktor = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hikayeler", x => x.HikayeID);
                 });
 
             migrationBuilder.CreateTable(
@@ -265,6 +283,9 @@ namespace Online_Clinic.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "BağışTalepleri");
+
+            migrationBuilder.DropTable(
+                name: "Hikayeler");
 
             migrationBuilder.DropTable(
                 name: "Randevular");

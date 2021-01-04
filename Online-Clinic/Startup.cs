@@ -47,6 +47,7 @@ namespace Online_Clinic
             services.AddScoped<IDoktorService, DoktorService>();
             services.AddScoped<IHastaService, HastaService>();
             services.AddScoped<IBaðýþçýService, BaðýþçýService>();
+            services.AddScoped<IHikayeService, HikayeService>();
 
 
 

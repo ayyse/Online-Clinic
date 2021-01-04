@@ -504,3 +504,5 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\TalepOnay\Index.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hikaye\Create.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Hikaye\Index.cshtml.g.cs

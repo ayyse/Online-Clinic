@@ -16,6 +16,7 @@ namespace Online_Clinic.Data.Implementation
             doktorRepository = new DoktorRepository(_ctx);
             hastaRepository = new HastaRepository(_ctx);
             bağışçıRepository = new BağışçıRepository(_ctx);
+            hikayeRepository = new HikayeRepository(_ctx);
         }
 
         public IBağışTalebiRepository bağışTalebiRepository { get; private set; }
@@ -24,6 +25,7 @@ namespace Online_Clinic.Data.Implementation
         public IDoktorRepository doktorRepository { get; private set; }
         public IBağışçıRepository bağışçıRepository { get; private set; }
         public IHastaRepository hastaRepository { get; private set; }
+        public IHikayeRepository hikayeRepository { get; private set; }
 
 
 

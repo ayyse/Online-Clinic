@@ -40,9 +40,9 @@ namespace Online_Clinic.Services.Implementation
                 {
                     var talep = _mapper.Map<BağışTalebiVM, BağışTalebi>(model);
                     talep.TalepTarihi = DateTime.Now;
-                    talep.AdSoyad = model.AdSoyad;
-                    talep.TalepAçıklaması = model.TalepAçıklaması;
-                    _unitOfWork.bağışTalebiRepository.Add(talep);
+                    //talep.AdSoyad = model.AdSoyad;
+                    //talep.TalepAçıklaması = model.TalepAçıklaması;
+                    //_unitOfWork.bağışTalebiRepository.Add(talep);
                     _unitOfWork.Save();
                     return new Result<BağışTalebiVM>(true, "Randevu işleminiz başarılı.");
                 }

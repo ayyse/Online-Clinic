@@ -4,44 +4,38 @@ using Online_Clinic.Services.Contracts;
 
 namespace Online_Clinic.Controllers
 {
-    public class RandevuController : Controller
+    public class HikayeController : Controller
     {
-        //Service katmanıyla bağlantı kurabilmek için
-        private readonly IRandevuService _randevuService;
+        private readonly IHikayeService _hikayeService;
 
         //Service katmanını inject etmek için constructor oluşturdum
-        public RandevuController(IRandevuService randevuService)
+        public HikayeController(IHikayeService hikayeService)
         {
-            _randevuService = randevuService;
+            _hikayeService = hikayeService;
         }
-
-        //[Authorize(Roles = ResultConstant.DoktorRole)]
         public IActionResult Index()
         {
-            var data = _randevuService.GetAllRandevu();
+            var data = _hikayeService.GetAllHikaye();
             if (data.IsSuccess)
-            {  
+            {
                 var result = data.Data;
                 return View(result);
             }
             return View(data);
         }
-
-        //[Authorize(Roles = ResultConstant.HastaRole)]
         public IActionResult Create()
         {
             return View();
         }
 
 
-        //[Authorize(Roles = ResultConstant.HastaRole)]
         [HttpPost]
-        public ActionResult Create(RandevuVM model)
+        public ActionResult Create(HikayeVM model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var data = _randevuService.CreateRandevu(model);
-                if(data.IsSuccess)
+                var data = _hikayeService.CreateHikaye(model);
+                if (data.IsSuccess)
                 {
                     return RedirectToAction("Index");
                 }
@@ -52,7 +46,5 @@ namespace Online_Clinic.Controllers
                 return View(model);
             }
         }
-
-
     }
 }

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace Online_Clinic.Services.Contracts
 {
-    public interface IDoktorService
+    public interface IHikayeService
     {
-        Result<List<DoktorVM>> GetAllDoktor();
+        Result<List<HikayeVM>> GetAllHikaye();
 
-        //Result<DoktorVM> Register(DoktorVM model);
+        Result<HikayeVM> CreateHikaye(HikayeVM model);
     }
 }

@@ -23,5 +23,7 @@ namespace Online_Clinic.Data.DataContext
         public DbSet<BağışTalebi> BağışTalepleri { get; set; }
 
         public DbSet<Randevu> Randevular { get; set; }
+
+        public DbSet<Hikaye> Hikayeler { get; set; }
     }
 }

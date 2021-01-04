@@ -9,7 +9,6 @@ namespace Online_Clinic.Common.ViewModels
 
         [Required]
         public string AdSoyad { get; set; }
-        public HastaVM hastaVM { get; set; }
 
         [Required]
         public string Bölüm { get; set; }
