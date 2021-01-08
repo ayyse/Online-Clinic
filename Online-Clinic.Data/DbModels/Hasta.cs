@@ -22,5 +22,9 @@ namespace Online_Clinic.Data.DbModels
 
         [NotMapped]
         public List<Doktor> Doktorlar { get; set; }
+
+        //public string HikayeID { get; set; }
+        //[ForeignKey("HikayeID")]
+        //public Hikaye Hikaye { get; set; }
     }
 }

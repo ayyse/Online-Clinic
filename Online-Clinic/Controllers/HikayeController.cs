@@ -23,6 +23,7 @@ namespace Online_Clinic.Controllers
             }
             return View(data);
         }
+
         public IActionResult Create()
         {
             return View();
@@ -46,5 +47,7 @@ namespace Online_Clinic.Controllers
                 return View(model);
             }
         }
+
+
     }
 }

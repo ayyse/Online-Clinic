@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Online_Clinic.Data.DbModels;
+using System;
+using System.Collections.Generic;
 
 namespace Online_Clinic.Common.ConstantsModels
 {
     public static class SeedData
     {
+
         public static void Seed(UserManager<Visitor> userManager, RoleManager<IdentityRole> roleManager)
         {
             SeedRoles(roleManager);
@@ -29,13 +32,10 @@ namespace Online_Clinic.Common.ConstantsModels
             }
         }
 
+
+
         private static void SeedRoles(RoleManager<IdentityRole> roleManager)
         {
-
-            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.AdminRole });
-            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.DoktorRole });
-            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.BağışçıRole });
-            //await roleManager.CreateAsync(new IdentityRole { Name = ResultConstant.HastaRole });
 
             if (!roleManager.RoleExistsAsync(ResultConstant.AdminRole).Result)
             {

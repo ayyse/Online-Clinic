@@ -3,24 +3,30 @@
 @inject SignInManager<Online_Clinic.Data.DbModels.Visitor> SignInManager
 @inject UserManager<Online_Clinic.Data.DbModels.Visitor> UserManager
 
+@*<head>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+</head>*@
+
 @if (SignInManager.IsSignedIn(User))
 {
 <ul class="nav navbar-nav navbar-right">
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba<b> @User.Identity.Name</b></a>
+        <a class="nav-link text-dark" asp-controller="Hikaye" asp-action="Create" title="Manage">Merhaba<b> @User.Identity.Name</b></a>
     </li>
     <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button class="appointment-btn">Çıkış Yap</button>
-        </form>
+        <a>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button style="background-color:#74d14c; font-size: 15px; color: white; border-radius: 5px; border-color:#74d14c">Çıkış Yap</button>
+            </form>
+        </a>
     </li>
 </ul>
 }
 else
 {
 <ul class="nav navbar-nav navbar-right">
-    <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Register">Kaydol</a></li>
-    <li class="appointment-btn"><a asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a></li>
+    <li><a type="button" style="background-color:#74d14c; font-size: 15px; color: white; border-radius: 5px; margin-right: 5px" asp-area="Identity" asp-page="/Account/Register">Kaydol</a></li>
+    <li><a type="button" style="background-color:#74d14c; font-size: 15px; color: white; border-radius: 5px" asp-area="Identity" asp-page="/Account/Login">Giriş </a></li>
 </ul>
 }
 

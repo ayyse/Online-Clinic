@@ -44,11 +44,8 @@ namespace Online_Clinic
             services.AddScoped<IRandevuService, RandevuService>();
             services.AddScoped<ITalepService, TalepService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IDoktorService, DoktorService>();
-            services.AddScoped<IHastaService, HastaService>();
-            services.AddScoped<IBaðýþçýService, BaðýþçýService>();
             services.AddScoped<IHikayeService, HikayeService>();
-
+            services.AddScoped<ITalepOnayService, TalepOnayService>();
 
 
 

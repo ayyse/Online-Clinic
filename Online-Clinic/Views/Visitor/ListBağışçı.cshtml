@@ -1,4 +1,4 @@
-﻿@model System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.HastaVM>
+﻿@model IEnumerable<Online_Clinic.Data.DbModels.Visitor>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,7 +18,7 @@
 <body>
 
     <div class="container">
-        <h2>Hasta Listesi</h2>
+        <h2>Bağışçı Listesi</h2>
         <p>@DateTime.Now</p>
         <table class="table">
             <thead>
@@ -30,17 +30,21 @@
             </thead>
             @foreach (var item in Model)
             {
-                <tbody>
-                    <tr>
-                        <td>@item.Ad</td>
-                        <td>@item.Soyad</td>
-                        <td>@item.Email</td>
-                        <td>
+                if (item.Role == ResultConstant.BağışçıRole)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@item.Ad</td>
+                            <td>@item.Soyad</td>
+                            <td>@item.Email</td>
+                            @*<td>
                             <a asp-action="Details" asp-route-id="@item.HastaID">Details</a> |
                             <a asp-action="Delete" asp-route-id="@item.HastaID">Delete</a>
-                        </td>
-                    </tr>
-                </tbody>
+                        </td>*@
+                        </tr>
+                    </tbody>
+                }
+
             }
         </table>
     </div>

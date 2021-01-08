@@ -55,6 +55,11 @@ namespace Online_Clinic.Services.Implementation
                 return new Result<BağışTalebiVM>(false, "Boş Olamaz");
         }
 
+        
+
+
+
+
         //public Result<List<BağışTalebiVM>> GetAllTalepByUserId(string userId)
         //{
         //    var data = _unitOfWork.bağışTalebiRepository.GetAll(u => u.HastaID == userId, includeProperties:"Hasta").ToList();

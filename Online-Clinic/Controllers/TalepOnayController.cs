@@ -18,6 +18,7 @@ namespace Online_Clinic.Controllers
 
         public IActionResult Index()
         {
+            var data = _onayService.GetSendTalepOnayı();
             return View();
         }
     }

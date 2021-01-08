@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Online_Clinic.Common.ResultModels;
+using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Data.Concrats;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,11 @@ namespace Online_Clinic.Services.Contracts
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+        }
+
+        public Result<BağışTalebiVM> GetSendTalepOnayı()
+        {
+            throw new NotImplementedException();
         }
     }
 }

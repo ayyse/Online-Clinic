@@ -13,7 +13,6 @@ namespace Online_Clinic.Services.Contracts
 
         Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model);
 
-
         //Result<List<BağışTalebiVM>> GetAllTalepByUserId(string userId);
         //Result<BağışTalebiVM> CreateBağışTalebi(BağışTalebiVM model, SessionContext user);
     }

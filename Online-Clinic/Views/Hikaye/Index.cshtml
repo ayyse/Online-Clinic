@@ -14,43 +14,78 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
 </head>
 <body>
+    <section class="container mt-4 mb-4">
+        <div class="container">
+            <div class="row mb-3">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="d-flex flex-row border rounded">
+                            <div class="p-0 w-25">
+                            </div>
+                            <div class="d-flex flex-row border rounded" style="border:1px">
+                                <h3 class="text-primary">@item.Ad @item.Soyad</h3>
+                                <h5 class="text-info">@item.HastalıkGeçmişi</h5>
+                                
+                                <!--<ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+                                    <li><i class="fab fa-message-square"></i> Mesaj Gönder</li>-->
+                                    @*<li><i class="fab fa-twitter-square"></i> Twitter</li>*@
+                                <!--</ul>-->
+                                <p class="text-right m-0"><a href="#" class="btn btn-primary"><i class="far fa-user"></i> Profili Görüntüle</a></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
 
-    <div class="container">
-        <h2>Hasta Hikayeleri</h2>
-        <p>@DateTime.Now</p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Ad Soyad</th>
-                    <th>Hastalık Geçmişi</th>
-                    @*<th>Saat</th>*@
-                    <th>Kronik Hastalıklar</th>
-                    <th>Tedavi Eden Doktorlar</th>
-                </tr>
-            </thead>
-            @foreach (var item in Model)
-            {
-                <tbody>
-                    <tr>
-                        <td>@item.Ad @item.Soyad</td>
-                        <td>@item.HastalıkGeçmişi</td>
-                        <td>@item.KronikHastalıklar</td>
-                        <td>@item.TedaviEdenDoktor</td>
-                        <td>
-                            @*<a asp-action="Edit" asp-route-id="@item.RandevuID">Edit</a> |*@
-                            @*<a asp-action="Details" asp-route-id="@item.HikayeID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.HikayeID">Delete</a>*@
-                        </td>
-                    </tr>
-                </tbody>
-            }
-        </table>
-    </div>
 
 </body>
 </html>
+
+@*@model System.Collections.Generic.IEnumerable<Online_Clinic.Common.ViewModels.HikayeVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+@*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+<section class="container mt-4 mb-4">
+    <div class="container">
+        <div class="row mb-3">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="d-flex flex-row border rounded">
+                        <div class="p-0 w-25">
+                        </div>
+                        <div class="d-flex flex-row border rounded" style="border:1px">
+                            <h4 class="text-primary">@item.Ad @item.Soyad</h4>
+                            <h5 class="text-info">@item.HastalıkGeçmişi</h5>
+                            <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+                                <li><i class="fab fa-message-square"></i> Mesaj Gönder</li>
+                                <li><i class="fab fa-twitter-square"></i> Twitter</li>
+                            </ul>
+                            <p class="text-right m-0"><a href="#" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>*@
+
+
 
 
 
