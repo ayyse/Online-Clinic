@@ -14,13 +14,117 @@
     </body>*@
 
 
-<div class="row" style="margin-top:30px auto">
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <br />
+    <br />
+    <div class="col-lg-12 well">
+        <div class="row">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.KullanıcıAdı"></label>
+                            <input asp-for="Input.KullanıcıAdı" class="form-control" />
+                            <span asp-validation-for="Input.KullanıcıAdı" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.Ad"></label>
+                            <input asp-for="Input.Ad" class="form-control" />
+                            <span asp-validation-for="Input.Ad" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.Soyad"></label>
+                            <input asp-for="Input.Soyad" class="form-control" />
+                            <span asp-validation-for="Input.Soyad" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label asp-for="Input.DoğumTarihi"></label>
+                            <input asp-for="Input.DoğumTarihi" class="form-control" type="date" />
+                            <span asp-validation-for="Input.DoğumTarihi" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-3 form-group" style="margin-top: 32px">
+                            <label asp-for="Input.Role"></label>
+                            <select asp-for="Input.Role">
+                                <option disabled>Üyelik Tipi Seçiniz</option>
+                                <option value="Seçiniz">Seçiniz</option>
+                                <option value="Bağışçı">Bağışçı</option>
+                                <option value="Doktor">Doktor</option>
+                                <option value="Hasta">Hasta</option>
+                            </select>
+                            <span asp-validation-for="Input.Role" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-3 form-group" style="margin-top: 32px">
+                            <label asp-for="Input.Cinsiyet"></label>
+                            <select asp-for="Input.Cinsiyet">
+                                <option disabled>Cinsiyet Seçiniz</option>
+                                <option value="Seçiniz">Seçiniz</option>
+                                <option value="Belirtmek istemiyorum">Belirtmek istemiyorum</option>
+                                <option value="Kadın">Kadın</option>
+                                <option value="Erkek">Erkek</option>
+                            </select>
+                            <span asp-validation-for="Input.Cinsiyet" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+                <button type="submit" class="btn btn-default" style="background-color: #74d14c; color: white; margin-left: 15px">Kaydol</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--<div class="row" style="margin-top:30px auto">
     <div class="col-md-6">
         <h4>Kayıt olmak için alanları eksiksiz doldurunuz</h4>
 
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            @*<hr />*@
-            <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">-->
+@*<hr />*@
+<!--<div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Input.KullanıcıAdı"></label>
                 <input asp-for="Input.KullanıcıAdı" class="form-control" />
@@ -81,8 +185,7 @@
             <button type="submit" class="btn btn-default">Kaydol</button>
         </form>
     </div>
-</div>
-
+</div>-->
 @*<div>
     <label asp-for="Input.Cinsiyet">CİNSİYET</label>
         <div class="form-check">

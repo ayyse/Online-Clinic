@@ -39,9 +39,8 @@
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
                 <form class="login100-form validate-form" id="account" method="post">
                     <span class="login100-form-title p-b-33">
-                        Online Clinic
+                        <img src="~/logo/logoo.png" />
                     </span>
-                    <h4>Hoş Geldiniz</h4>
                     <hr />
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
@@ -63,13 +62,13 @@
                         </div>
                     </div>
                     <div class="container-login100-form-btn m-t-20">
-                        <button type="submit" class="login100-form-btn">GİRİŞ YAP</button>
+                        <button type="submit" class="login100-form-btn" style="background-color: #74d14c">GİRİŞ YAP</button>
                     </div>
                     </br>
                     <div class="form-group">
-                        <p>
+                        @*<p>
                             <a id="forgot-password" asp-page="./ForgotPassword">Parolanızı mı unuttunuz?</a>
-                        </p>
+                        </p>*@
                         <p>
                             <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Yeni kullanıcı olarak kaydolun</a>
                         </p>

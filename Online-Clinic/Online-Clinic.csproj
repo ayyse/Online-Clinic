@@ -204,4 +204,8 @@
     <ProjectReference Include="..\Online-Clinic.Services\Online-Clinic.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include=".circleci\" />
+  </ItemGroup>
+
 </Project>
