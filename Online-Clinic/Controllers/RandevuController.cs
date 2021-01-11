@@ -15,7 +15,6 @@ namespace Online_Clinic.Controllers
             _randevuService = randevuService;
         }
 
-        //[Authorize(Roles = ResultConstant.DoktorRole)]
         public IActionResult Index()
         {
             var data = _randevuService.GetAllRandevu();
@@ -27,14 +26,12 @@ namespace Online_Clinic.Controllers
             return View(data);
         }
 
-        //[Authorize(Roles = ResultConstant.HastaRole)]
+   
         public IActionResult Create()
         {
             return View();
         }
 
-
-        //[Authorize(Roles = ResultConstant.HastaRole)]
         [HttpPost]
         public ActionResult Create(RandevuVM model)
         {

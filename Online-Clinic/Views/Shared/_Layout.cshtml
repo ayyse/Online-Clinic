@@ -69,9 +69,9 @@
 
 
     <!-- MENU -->
-    <div id="sticky-wrapper" class="sticky-wrapper" style="height: 70px;">
-        <section class="navbar navbar-default navbar-static-top" role="navigation" style="width: 974px;">
-            <div class="container" style="vertical-align: middle">
+    <div id="sticky-wrapper" class="sticky-wrapper">
+        <section class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
                 <a asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/logo/logoo.png" /></a>
                 <div>
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -85,7 +85,6 @@
                     <partial name="_LoginPartial" />
                     <div>
                         <ul class="nav navbar-nav navbar-right">
-                            @*<li class="active"><a asp-controller="Home" asp-action="Index" class="smoothScroll">Anasayfa</a></li>*@
                             @if (SignInManager.IsSignedIn(User))
                             {
                                 @if (User.IsInRole(ResultConstant.AdminRole))
