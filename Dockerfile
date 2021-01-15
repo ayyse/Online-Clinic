@@ -1,22 +1,26 @@
-# Dockerfile
-
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+# Use Microsoft's official build .NET image.
+# https://hub.docker.com/_/microsoft-dotnet-core-sdk/
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 WORKDIR /app
 
-# Copy csproj and restore as distinct layers
+# Install production dependencies.
+# Copy csproj and restore as distinct layers.
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy everything else and build
-COPY . .
+# Copy local code to the container image.
+COPY . ./
+WORKDIR /app
+
+# Build a release artifact.
 RUN dotnet publish -c Release -o out
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
-WORKDIR /app
-COPY --from=build-env /app/out .
 
-# Run the app on container startup
-# Use your project name for the second parameter
-# e.g. MyProject.dll
-ENTRYPOINT [ "dotnet", "HerokuApp.dll" ]
+# Use Microsoft's official runtime .NET image.
+# https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine AS runtime
+WORKDIR /app
+COPY --from=build /app/out ./
+
+# Run the web service on container startup.
+ENTRYPOINT ["dotnet", "Online-Clinic.dll"]
