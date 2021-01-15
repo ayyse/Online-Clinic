@@ -23,6 +23,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Kullanıcı Adı</th>
                     <th>Ad</th>
                     <th>Soyad</th>
                     <th>E-mail</th>
@@ -34,13 +35,14 @@
                 {
                     <tbody>
                         <tr>
+                            <td>@item.UserName</td>
                             <td>@item.Ad</td>
                             <td>@item.Soyad</td>
                             <td>@item.Email</td>
-                            @*<td>
-                            <a asp-action="Details" asp-route-id="@item.HastaID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.HastaID">Delete</a>
-                        </td>*@
+                            <td>
+                                <a type="button" style="background-color: #74d14c; color: white; padding: 5px; border-radius: 5px; margin-right: 5px" asp-action="Detay" asp-route-id="@item.Id">Detay</a>
+                                <a type="button" style="background-color: indianred; color: white; padding: 5px; border-radius: 5px" asp-action="Sil" asp-route-id="@item.Id">Sil</a>
+                            </td>
                         </tr>
                     </tbody>
                 }

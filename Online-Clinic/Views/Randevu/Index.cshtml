@@ -40,9 +40,8 @@
                         <td>@item.Email</td>
                         <td>@item.Telefon</td>
                         <td>
-                            @*<a asp-action="Edit" asp-route-id="@item.RandevuID">Edit</a> |*@
-                            <a asp-action="Details" asp-route-id="@item.RandevuID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.RandevuID">Delete</a>
+                            <a type="button" style="background-color: #74d14c; color: white; padding: 5px; border-radius: 5px; margin-right: 5px" asp-action="Detay" asp-route-id="@item.RandevuID">Detay</a>
+                            <a type="button" style="background-color: indianred; color: white; padding: 5px; border-radius: 5px" asp-action="Sil" asp-route-id="@item.RandevuID">Sil</a>
                         </td>
                     </tr>
                 </tbody>

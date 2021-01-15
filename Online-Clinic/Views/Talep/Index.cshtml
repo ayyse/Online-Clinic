@@ -36,6 +36,10 @@
                         <td>@item.TalepTarihi</td>
                         <td>@item.AdSoyad</td>
                         <td>@item.TalepAçıklaması</td>
+                        <td>
+                            <a type="button" style="background-color: #74d14c; color: white; padding: 5px; border-radius: 5px; margin-right: 5px" asp-action="Onayla" asp-route-id="@item.TalepID">Onay</a>
+                            <a type="button" style="background-color: indianred; color: white; padding: 5px; border-radius: 5px" asp-action="İptal" asp-route-id="@item.TalepID">İptal</a>
+                        </td>
                     </tr>
                 </tbody>
             }
