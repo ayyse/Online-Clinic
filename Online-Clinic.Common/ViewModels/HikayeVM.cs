@@ -8,6 +8,10 @@ namespace Online_Clinic.Common.ViewModels
     public class HikayeVM
     {
         public int HikayeID { get; set; }
+
+        public string HastaID { get; set; }
+        public HastaVM Hasta { get; set; }
+
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string HastalıkGeçmişi { get; set; }

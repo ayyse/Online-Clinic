@@ -11,23 +11,13 @@ namespace Online_Clinic.Common.ViewModels
     {
         public int TalepID { get; set; }
 
+        public string HastaID { get; set; }
+        public HastaVM Hasta { get; set; }
+
         public string AdSoyad { get; set; }
-
-        [Required]
         public DateTime TalepTarihi { get; set; }
-
-
-        [Required]
         public string TalepAçıklaması { get; set; }
         public bool Onay { get; set; }
         public bool İptal { get; set; }
-
-        //public string HastaID { get; set; }
-        //[ForeignKey("HastaID")]
-        //public Hasta Hasta { get; set; }
-
-        //public string AdminID { get; set; }
-        //[ForeignKey("AdminID")]
-        //public Admin Admin { get; set; }
     }
 }

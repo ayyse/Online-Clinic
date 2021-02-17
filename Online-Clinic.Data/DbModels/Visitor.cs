@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Online_Clinic.Data.DbModels
 {
@@ -11,11 +13,8 @@ namespace Online_Clinic.Data.DbModels
         public string Cinsiyet { get; set; }
         public string Şifre { get; set; }
         public string Image { get; set; }
-
         public string Role { get; set; }
-
         public bool IsActive { get; set; }
         public bool IsAdmin { get; set; }
-
     }
 }

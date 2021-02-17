@@ -8,14 +8,6 @@ namespace Online_Clinic.Data.DbModels
 {
     public class Doktor : Visitor
     {
-        //[Key]
-        //public string DoktorID { get; set; }
-        //public string Ad { get; set; }
-        //public string Soyad { get; set; }
-        //public DateTime DoğumTarihi { get; set; }
-        //public string Cinsiyet { get; set; }
-        //public string Şifre { get; set; }
-        //public string Image { get; set; }
         public string Branş { get; set; }
         public string Özgeçmiş { get; set; }
         public string Adres { get; set; }
@@ -23,5 +15,8 @@ namespace Online_Clinic.Data.DbModels
 
         [NotMapped]
         public List<Hasta> Hastalar { get; set; }
+
+        [NotMapped]
+        public List<Randevu> Randevular { get; set; }
     }
 }

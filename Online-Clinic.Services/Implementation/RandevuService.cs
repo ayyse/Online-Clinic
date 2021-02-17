@@ -37,7 +37,6 @@ namespace Online_Clinic.Services.Implementation
                 try
                 {
                     var randevu = _mapper.Map<RandevuVM, Randevu>(model);
-                    //randevu.Tarih = DateTime.Now;
                     _unitOfWork.randevuRepository.Add(randevu);
                     _unitOfWork.Save();
                     return new Result<RandevuVM>(true, "Randevu işleminiz başarılı.");

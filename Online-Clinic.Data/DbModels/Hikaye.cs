@@ -6,6 +6,7 @@ namespace Online_Clinic.Data.DbModels
     {
         [Key]
         public int HikayeID { get; set; }
+        public Hasta Hasta { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string HastalıkGeçmişi { get; set; }

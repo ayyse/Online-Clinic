@@ -17,7 +17,7 @@ namespace Online_Clinic.Data.Implementation
         }
 
         public IBağışTalebiRepository bağışTalebiRepository { get; private set; }
-        public IRandevuRepository randevuRepository { get; private set; }
+        public IRandevuRepository randevuRepository { get; set; }
         public IHikayeRepository hikayeRepository { get; private set; }
         public IVisitorRepository visitorRepository { get; private set; }
 

@@ -12,6 +12,8 @@ namespace Online_Clinic.Data.DataContext
         {
             
         }
+
+
         public DbSet<Visitor> Visitors { get; set; }
 
         public DbSet<Doktor> Doktorlar { get; set; }

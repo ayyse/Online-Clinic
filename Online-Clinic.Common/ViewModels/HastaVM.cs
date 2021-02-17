@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Online_Clinic.Common.ViewModels
 {
     public class HastaVM
     {
-        public string HastaID { get; set; }
+        public string HastaID { get; set; } 
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public DateTime DoğumTarihi { get; set; }

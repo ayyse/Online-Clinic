@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_Clinic.Data.DbModels;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Online_Clinic.Common.ViewModels
@@ -6,6 +7,12 @@ namespace Online_Clinic.Common.ViewModels
     public class RandevuVM
     {
         public int RandevuID { get; set; }
+
+        public string DoktorID { get; set; }
+        public DoktorVM Doktor { get; set; }
+
+        public string HastaID { get; set; }
+        public HastaVM Hasta { get; set; }
 
         [Required]
         public string AdSoyad { get; set; }
@@ -21,15 +28,5 @@ namespace Online_Clinic.Common.ViewModels
 
         [Required]
         public string Email { get; set; }
-
-        //public void SetRandevu(string adSoyad, string bölüm, string tel, string mail, DateTime tarih)
-        //{
-        //    this.AdSoyad = adSoyad;
-        //    this.Bölüm = bölüm;
-        //    this.Telefon = tel;
-        //    this.Email = mail;
-        //    this.Tarih = tarih;
-        //}
-
     }
 }
