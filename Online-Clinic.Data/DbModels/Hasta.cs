@@ -19,6 +19,7 @@ namespace Online_Clinic.Data.DbModels
         [NotMapped]
         public List<BağışTalebi> BağışTalepleri { get; set; }
 
+        public int HikayeID { get; set; }
         public Hikaye Hikaye { get; set; }
     }
 }
