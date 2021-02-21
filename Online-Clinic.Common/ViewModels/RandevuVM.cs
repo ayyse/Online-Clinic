@@ -6,7 +6,7 @@ namespace Online_Clinic.Common.ViewModels
 {
     public class RandevuVM
     {
-        public int RandevuID { get; set; }
+        public string RandevuID { get; set; }
 
         public string DoktorID { get; set; }
         public DoktorVM Doktor { get; set; }

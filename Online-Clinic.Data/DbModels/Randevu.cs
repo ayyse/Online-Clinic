@@ -11,6 +11,7 @@ namespace Online_Clinic.Data.DbModels
         public string DoktorID { get; set; }
         public Doktor Doktor { get; set; }
 
+        [Required]
         public string HastaID { get; set; }
         public Hasta Hasta { get; set; }
 

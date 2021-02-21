@@ -10,8 +10,8 @@ using Online_Clinic.Data.DataContext;
 namespace Online_Clinic.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20210217191049_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210220132149_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -262,7 +262,29 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Ad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HastaID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("HastalıkGeçmişi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KronikHastalıklar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Soyad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TedaviEdenDoktor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("HikayeID");
+
+                    b.HasIndex("HastaID")
+                        .IsUnique()
+                        .HasFilter("[HastaID] IS NOT NULL");
 
                     b.ToTable("Hikayeler");
                 });
@@ -287,6 +309,7 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HastaID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Tarih")
@@ -386,18 +409,11 @@ namespace Online_Clinic.Data.Migrations
                     b.Property<string>("HastalıkGeçmişi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HikayeID")
-                        .HasColumnType("int");
-
                     b.Property<string>("KronikHastalıklar")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TedaviEdenDoktor")
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("HikayeID")
-                        .IsUnique()
-                        .HasFilter("[HikayeID] IS NOT NULL");
 
                     b.HasDiscriminator().HasValue("Hasta");
                 });
@@ -460,6 +476,13 @@ namespace Online_Clinic.Data.Migrations
                         .HasForeignKey("HastaID");
                 });
 
+            modelBuilder.Entity("Online_Clinic.Data.DbModels.Hikaye", b =>
+                {
+                    b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
+                        .WithOne("Hikaye")
+                        .HasForeignKey("Online_Clinic.Data.DbModels.Hikaye", "HastaID");
+                });
+
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>
                 {
                     b.HasOne("Online_Clinic.Data.DbModels.Doktor", "Doktor")
@@ -468,14 +491,7 @@ namespace Online_Clinic.Data.Migrations
 
                     b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
                         .WithMany()
-                        .HasForeignKey("HastaID");
-                });
-
-            modelBuilder.Entity("Online_Clinic.Data.DbModels.Hasta", b =>
-                {
-                    b.HasOne("Online_Clinic.Data.DbModels.Hikaye", "Hikaye")
-                        .WithOne("Hasta")
-                        .HasForeignKey("Online_Clinic.Data.DbModels.Hasta", "HikayeID")
+                        .HasForeignKey("HastaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

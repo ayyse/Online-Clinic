@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Online_Clinic.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,39 +19,6 @@ namespace Online_Clinic.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Hikayeler",
-                columns: table => new
-                {
-                    HikayeID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Hikayeler", x => x.HikayeID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetRoleClaims",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<string>(nullable: false),
-                    ClaimType = table.Column<string>(nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -93,17 +60,31 @@ namespace Online_Clinic.Data.Migrations
                     Doktor_Kurum = table.Column<string>(nullable: true),
                     HastalıkGeçmişi = table.Column<string>(nullable: true),
                     KronikHastalıklar = table.Column<string>(nullable: true),
-                    TedaviEdenDoktor = table.Column<string>(nullable: true),
-                    HikayeID = table.Column<int>(nullable: true)
+                    TedaviEdenDoktor = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleId = table.Column<string>(nullable: false),
+                    ClaimType = table.Column<string>(nullable: true),
+                    ClaimValue = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_Hikayeler_HikayeID",
-                        column: x => x.HikayeID,
-                        principalTable: "Hikayeler",
-                        principalColumn: "HikayeID",
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -217,13 +198,37 @@ namespace Online_Clinic.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Hikayeler",
+                columns: table => new
+                {
+                    HikayeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HastaID = table.Column<string>(nullable: true),
+                    Ad = table.Column<string>(nullable: true),
+                    Soyad = table.Column<string>(nullable: true),
+                    HastalıkGeçmişi = table.Column<string>(nullable: true),
+                    KronikHastalıklar = table.Column<string>(nullable: true),
+                    TedaviEdenDoktor = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hikayeler", x => x.HikayeID);
+                    table.ForeignKey(
+                        name: "FK_Hikayeler_AspNetUsers_HastaID",
+                        column: x => x.HastaID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Randevular",
                 columns: table => new
                 {
                     RandevuID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DoktorID = table.Column<string>(nullable: true),
-                    HastaID = table.Column<string>(nullable: true),
+                    HastaID = table.Column<string>(nullable: false),
                     AdSoyad = table.Column<string>(nullable: true),
                     Bölüm = table.Column<string>(nullable: true),
                     Telefon = table.Column<string>(nullable: true),
@@ -244,7 +249,7 @@ namespace Online_Clinic.Data.Migrations
                         column: x => x.HastaID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -287,16 +292,16 @@ namespace Online_Clinic.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_HikayeID",
-                table: "AspNetUsers",
-                column: "HikayeID",
-                unique: true,
-                filter: "[HikayeID] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_BağışTalepleri_HastaID",
                 table: "BağışTalepleri",
                 column: "HastaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Hikayeler_HastaID",
+                table: "Hikayeler",
+                column: "HastaID",
+                unique: true,
+                filter: "[HastaID] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Randevular_DoktorID",
@@ -330,6 +335,9 @@ namespace Online_Clinic.Data.Migrations
                 name: "BağışTalepleri");
 
             migrationBuilder.DropTable(
+                name: "Hikayeler");
+
+            migrationBuilder.DropTable(
                 name: "Randevular");
 
             migrationBuilder.DropTable(
@@ -337,9 +345,6 @@ namespace Online_Clinic.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Hikayeler");
         }
     }
 }

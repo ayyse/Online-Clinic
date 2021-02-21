@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Online_Clinic.Common.ResultModels;
+using Online_Clinic.Common.SessionOperations;
 using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DbModels;
@@ -22,21 +23,22 @@ namespace Online_Clinic.Services.Implementation
         }
 
 
-        public Result<List<RandevuVM>> GetAllRandevu()
+        public Result<List<RandevuVM>> GetAllRandevu(string userId)
         {
-            var data = _unitOfWork.randevuRepository.GetAll().ToList();
+            var data = _unitOfWork.randevuRepository.GetAll(u => u.HastaID == userId).ToList();
             var randevular = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
             return new Result<List<RandevuVM>>(true, "Başarılı", randevular);
 
         }
 
-        public Result<RandevuVM> CreateRandevu(RandevuVM model)
+        public Result<RandevuVM> CreateRandevu(RandevuVM model, SessionContext user)
         {
             if (model != null)
             {
                 try
                 {
                     var randevu = _mapper.Map<RandevuVM, Randevu>(model);
+                    randevu.HastaID = user.LoginID;
                     _unitOfWork.randevuRepository.Add(randevu);
                     _unitOfWork.Save();
                     return new Result<RandevuVM>(true, "Randevu işleminiz başarılı.");
@@ -49,36 +51,5 @@ namespace Online_Clinic.Services.Implementation
             else
                 return new Result<RandevuVM>(false, "Boş Olamaz");
         }
-
-        //public Result<List<RandevuVM>> GetAllRandevu()
-        //{
-        //    var data = _unitOfWork.randevuRepository.GetAll().ToList();
-
-        //    #region AutoMapper olmayan yöntem
-        //    //if (data != null)
-        //    //{
-        //    //    List<Randevu> returnData = new List<Randevu>();
-        //    //    foreach (var item in data)
-        //    //    {
-        //    //        returnData.Add(new Randevu()
-        //    //        {
-        //    //            Id = item.Id,
-        //    //            Doktor = item.Doktor,
-        //    //            Tarih = item.Tarih,
-        //    //            Saat = item.Saat
-
-        //    //        });
-        //    //    }
-        //    //    return new Result<List<Randevu>>(true, "Başarılı", returnData);
-        //    //}
-        //    //else
-        //    //    return new Result<List<Randevu>>(false, "Başarısız."); 
-        //    #endregion
-
-        //    #region AutoMapper ile
-        //    var randevu = _mapper.Map<List<Randevu>, List<RandevuVM>>(data);
-        //    return new Result<List<RandevuVM>>(true, "Başarılı", randevu);
-        //    #endregion
-        //}
     }
 }
