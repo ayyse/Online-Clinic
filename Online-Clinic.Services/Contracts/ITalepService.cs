@@ -9,11 +9,11 @@ namespace Online_Clinic.Services.Contracts
 {
     public interface ITalepService
     {
-        Result<List<BağışTalebiVM>> GetAllTalep();
+        //Result<List<BağışTalebiVM>> GetAllTalep();
 
-        Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model);
+        //Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model);
 
-        //Result<List<BağışTalebiVM>> GetAllTalepByUserId(string userId);
-        //Result<BağışTalebiVM> CreateBağışTalebi(BağışTalebiVM model, SessionContext user);
+        Result<List<BağışTalebiVM>> GetAllTalep(string userId);
+        Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model, SessionContext user);
     }
 }

@@ -24,15 +24,15 @@ namespace Online_Clinic.Services.Implementation
 
 
 
-        public Result<List<BağışTalebiVM>> GetAllTalep()
+        public Result<List<BağışTalebiVM>> GetAllTalep(string userId)
         {
-            var data = _unitOfWork.bağışTalebiRepository.GetAll().ToList();
-            var randevular = _mapper.Map<List<BağışTalebi>, List<BağışTalebiVM>>(data);
-            return new Result<List<BağışTalebiVM>>(true, "Başarılı", randevular);
+            var data = _unitOfWork.bağışTalebiRepository.GetAll(u => u.HastaID == userId).ToList();
+            var talepler = _mapper.Map<List<BağışTalebi>, List<BağışTalebiVM>>(data);
+            return new Result<List<BağışTalebiVM>>(true, "Başarılı", talepler);
 
         }
 
-        public Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model)
+        public Result<BağışTalebiVM> CreateTalep(BağışTalebiVM model, SessionContext user)
         {
             if (model != null)
             {
@@ -40,6 +40,7 @@ namespace Online_Clinic.Services.Implementation
                 {
                     var talep = _mapper.Map<BağışTalebiVM, BağışTalebi>(model);
                     talep.TalepTarihi = DateTime.Now;
+                    talep.HastaID = user.LoginID;
                     _unitOfWork.bağışTalebiRepository.Add(talep);
                     _unitOfWork.Save();
                     return new Result<BağışTalebiVM>(true, "Randevu işleminiz başarılı.");

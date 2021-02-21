@@ -17,15 +17,26 @@ namespace Online_Clinic.Controllers
             _talepService = talepService;
         }
 
+        //public IActionResult Index()
+        //{
+        //    var data = _talepService.GetAllTalep();
+        //    if (data.IsSuccess)
+        //    {
+        //        var result = data.Data;
+        //        return View(result);
+        //    }
+        //    return View(data);
+        //}
+
         public IActionResult Index()
         {
-            var data = _talepService.GetAllTalep();
-            if (data.IsSuccess)
+            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+            var talep = _talepService.GetAllTalep(user.LoginID);
+            if (talep.IsSuccess)
             {
-                var result = data.Data;
-                return View(result);
+                return View(talep.Data);
             }
-            return View(data);
+            return View(user);
         }
 
         public IActionResult Create()
@@ -33,24 +44,41 @@ namespace Online_Clinic.Controllers
             return View();
         }
 
-
         [HttpPost]
-        public ActionResult Create(BağışTalebiVM model)
+        public IActionResult Create(BağışTalebiVM model)
         {
+            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
             if (ModelState.IsValid)
             {
-                var data = _talepService.CreateTalep(model);
+                var data = _talepService.CreateTalep(model, user);
+
                 if (data.IsSuccess)
                 {
                     return RedirectToAction("Index");
                 }
                 return View(model);
             }
-            else
-            {
-                return View(model);
-            }
+            return View();
         }
+
+
+        //[HttpPost]
+        //public ActionResult Create(BağışTalebiVM model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var data = _talepService.CreateTalep(model);
+        //        if (data.IsSuccess)
+        //        {
+        //            return RedirectToAction("Index");
+        //        }
+        //        return View(model);
+        //    }
+        //    else
+        //    {
+        //        return View(model);
+        //    }
+        //}
 
 
 

@@ -7,8 +7,11 @@ namespace Online_Clinic.Data.DbModels
     {
         [Key]
         public int TalepID { get; set; }
+
+        [Required]
         public string HastaID { get; set; }
         public Hasta Hasta { get; set; }
+
         public string AdSoyad { get; set; }
         public DateTime TalepTarihi { get; set; }
         public string TalepAçıklaması { get; set; }
