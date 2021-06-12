@@ -46,15 +46,23 @@
                         </div>
 
 
-                    <div class="col-md-12 col-sm-12">
-                        <label asp-for="Tarih">Tarih Seçiniz</label>
-                        <input asp-for="Tarih" class="form-control">
-                        <label asp-for="Telefon">Telefon Numaranız</label>
-                        <input asp-for="Telefon" class="form-control">
-                        <label asp-for="Email">E-mail Adresiniz</label>
-                        <input asp-for="Email" class="form-control" />
-                        <button type="submit" class="form-control" id="cf-submit" name="submit" value="Create" style="background-color: #74d14c">Randevu Al</button>
-                    </div>
+                        <div class="col-md-12 col-sm-12">
+                            @*<label asp-for="Doktor.Ad">Doktor Seçiniz</label>
+                            <select class="form-control" asp-for="Doktor.Ad">
+                                <option action>Seçiniz</option>
+                                <option>Ömer Göktaş</option>
+                                <option>Semih Kara</option>
+                                <option>Aylin Peker</option>
+                                <option>Ali Kaya</option>
+                            </select>*@
+                            <label asp-for="Tarih">Tarih Seçiniz</label>
+                            <input asp-for="Tarih" class="form-control">
+                            <label asp-for="Telefon">Telefon Numaranız</label>
+                            <input asp-for="Telefon" class="form-control">
+                            <label asp-for="Email">E-mail Adresiniz</label>
+                            <input asp-for="Email" class="form-control" />
+                            <button type="submit" class="form-control" id="cf-submit" name="submit" value="Create" style="background-color: #74d14c">Randevu Al</button>
+</div>
                     </div>
                 </form>
             </div>

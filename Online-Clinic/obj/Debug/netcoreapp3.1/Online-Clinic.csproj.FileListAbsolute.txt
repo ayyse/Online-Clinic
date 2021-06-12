@@ -37,7 +37,6 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\S
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Online-Clinic.csprojAssemblyReference.cache
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Online-Clinic.AssemblyInfoInputs.cache
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Online-Clinic.AssemblyInfo.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Online-Clinic.csproj.CoreCompileInputs.cache
@@ -505,3 +504,4 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\R
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Visitor\ListBağışçı.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Visitor\ListDoktor.cshtml.g.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Visitor\ListHasta.cshtml.g.cs
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic\obj\Debug\netcoreapp3.1\Online-Clinic.csproj.AssemblyReference.cache

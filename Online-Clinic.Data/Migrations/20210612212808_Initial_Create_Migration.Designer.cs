@@ -10,8 +10,8 @@ using Online_Clinic.Data.DataContext;
 namespace Online_Clinic.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20210220132149_First")]
-    partial class First
+    [Migration("20210612212808_Initial_Create_Migration")]
+    partial class Initial_Create_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -234,6 +234,7 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HastaID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("Onay")
@@ -266,6 +267,7 @@ namespace Online_Clinic.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HastaID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("HastalıkGeçmişi")
@@ -283,8 +285,7 @@ namespace Online_Clinic.Data.Migrations
                     b.HasKey("HikayeID");
 
                     b.HasIndex("HastaID")
-                        .IsUnique()
-                        .HasFilter("[HastaID] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Hikayeler");
                 });
@@ -473,14 +474,18 @@ namespace Online_Clinic.Data.Migrations
                 {
                     b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
                         .WithMany()
-                        .HasForeignKey("HastaID");
+                        .HasForeignKey("HastaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Hikaye", b =>
                 {
                     b.HasOne("Online_Clinic.Data.DbModels.Hasta", "Hasta")
                         .WithOne("Hikaye")
-                        .HasForeignKey("Online_Clinic.Data.DbModels.Hikaye", "HastaID");
+                        .HasForeignKey("Online_Clinic.Data.DbModels.Hikaye", "HastaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Online_Clinic.Data.DbModels.Randevu", b =>

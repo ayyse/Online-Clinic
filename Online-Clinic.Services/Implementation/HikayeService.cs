@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Online_Clinic.Common.ResultModels;
+using Online_Clinic.Common.SessionOperations;
 using Online_Clinic.Common.ViewModels;
 using Online_Clinic.Data.Concrats;
 using Online_Clinic.Data.DbModels;
@@ -21,21 +22,22 @@ namespace Online_Clinic.Services.Implementation
             _mapper = mapper;
         }
 
-        public Result<List<HikayeVM>> GetAllHikaye()
+        public Result<List<HikayeVM>> GetAllHikaye(string userId)
         {
-            var data = _unitOfWork.hikayeRepository.GetAll().ToList();
+            var data = _unitOfWork.hikayeRepository.GetAll(u => u.HastaID == userId).ToList();
             var hikayeler = _mapper.Map<List<Hikaye>, List<HikayeVM>>(data);
             return new Result<List<HikayeVM>>(true, "Başarılı", hikayeler);
 
         }
 
-        public Result<HikayeVM> CreateHikaye(HikayeVM model)
+        public Result<HikayeVM> CreateHikaye(HikayeVM model, SessionContext user)
         {
             if (model != null)
             {
                 try
                 {
                     var hikaye = _mapper.Map<HikayeVM, Hikaye>(model);
+                    hikaye.HastaID = user.LoginID;
                     _unitOfWork.hikayeRepository.Add(hikaye);
                     _unitOfWork.Save();
                     return new Result<HikayeVM>(true, "Hikaye işleminiz başarılı.");

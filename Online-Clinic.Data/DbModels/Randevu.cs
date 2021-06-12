@@ -8,6 +8,7 @@ namespace Online_Clinic.Data.DbModels
         [Key]
         public int RandevuID { get; set; }
 
+        //[Required]
         public string DoktorID { get; set; }
         public Doktor Doktor { get; set; }
 

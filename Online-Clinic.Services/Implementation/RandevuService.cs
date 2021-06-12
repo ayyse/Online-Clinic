@@ -39,6 +39,8 @@ namespace Online_Clinic.Services.Implementation
                 {
                     var randevu = _mapper.Map<RandevuVM, Randevu>(model);
                     randevu.HastaID = user.LoginID;
+                    //randevu.DoktorID = model.DoktorID;
+                    //randevu.Doktor.Ad = model.Doktor.Ad;
                     _unitOfWork.randevuRepository.Add(randevu);
                     _unitOfWork.Save();
                     return new Result<RandevuVM>(true, "Randevu işleminiz başarılı.");

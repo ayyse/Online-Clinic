@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Online_Clinic.Data.Migrations
 {
-    public partial class First : Migration
+    public partial class Initial_Create_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -179,7 +179,7 @@ namespace Online_Clinic.Data.Migrations
                 {
                     TalepID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    HastaID = table.Column<string>(nullable: true),
+                    HastaID = table.Column<string>(nullable: false),
                     AdSoyad = table.Column<string>(nullable: true),
                     TalepTarihi = table.Column<DateTime>(nullable: false),
                     TalepAçıklaması = table.Column<string>(nullable: true),
@@ -194,7 +194,7 @@ namespace Online_Clinic.Data.Migrations
                         column: x => x.HastaID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -203,7 +203,7 @@ namespace Online_Clinic.Data.Migrations
                 {
                     HikayeID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    HastaID = table.Column<string>(nullable: true),
+                    HastaID = table.Column<string>(nullable: false),
                     Ad = table.Column<string>(nullable: true),
                     Soyad = table.Column<string>(nullable: true),
                     HastalıkGeçmişi = table.Column<string>(nullable: true),
@@ -218,7 +218,7 @@ namespace Online_Clinic.Data.Migrations
                         column: x => x.HastaID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -300,8 +300,7 @@ namespace Online_Clinic.Data.Migrations
                 name: "IX_Hikayeler_HastaID",
                 table: "Hikayeler",
                 column: "HastaID",
-                unique: true,
-                filter: "[HastaID] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Randevular_DoktorID",

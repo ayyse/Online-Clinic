@@ -7,8 +7,8 @@ namespace Online_Clinic.Data.DbModels
     {
         public int HikayeID { get; set; }
 
+        [Required]
         public string HastaID { get; set; }
-        [ForeignKey("HastaID")]
         public Hasta Hasta { get; set; }
 
         public string Ad { get; set; }

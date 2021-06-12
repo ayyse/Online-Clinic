@@ -1,7 +1,6 @@
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\bin\Debug\netcoreapp3.1\Online-Clinic.Common.deps.json
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\bin\Debug\netcoreapp3.1\Online-Clinic.Common.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\bin\Debug\netcoreapp3.1\Online-Clinic.Common.pdb
-C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.csprojAssemblyReference.cache
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.AssemblyInfoInputs.cache
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.AssemblyInfo.cs
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.csproj.CoreCompileInputs.cache
@@ -10,3 +9,4 @@ C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcorea
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\bin\Debug\netcoreapp3.1\Online-Clinic.Data.dll
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\bin\Debug\netcoreapp3.1\Online-Clinic.Data.pdb
 C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.csproj.CopyComplete
+C:\Users\Acer\source\repos\Online-Clinic\Online-Clinic.Common\obj\Debug\netcoreapp3.1\Online-Clinic.Common.csproj.AssemblyReference.cache
